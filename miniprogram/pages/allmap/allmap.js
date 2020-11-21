@@ -83,7 +83,7 @@ Page({
                   id: 0,
                   latitude: 26.05668,
                   longitude: 119.19249,
-                  iconPath : "../../image/location.png",
+                  iconPath : "../image/allmap/location.png",
                   // alpha:0,
                   callout:{
                     content: " 京元",
@@ -97,7 +97,7 @@ Page({
                     id: 1,
                     latitude: 26.05276,
                     longitude: 119.19266,
-                    iconPath : "../../image/location.png",
+                    iconPath : "../image/allmap/location.png",
                     callout: {
                       content: " 玫瑰园",
                       padding: 10,
