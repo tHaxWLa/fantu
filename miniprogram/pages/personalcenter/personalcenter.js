@@ -31,7 +31,22 @@ Page({
       })
     }
   },
-
+  tip:function()
+  {
+    wx.showToast({
+      title:'请先登录',
+      icon:'none',
+      duration:1000
+     })
+  },
+  tipp:function()
+  {
+    wx.showToast({
+      title:'即将开发',
+      icon:'none',
+      duration:1000
+     })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -86,5 +101,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  
 })

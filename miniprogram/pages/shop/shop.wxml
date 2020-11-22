@@ -1,1 +1,50 @@
-<button>这里是餐厅</button>
+<view>
+  <text class="text1">招牌菜</text>
+  <swiper indicator-dots="{{indicatorDots}}" 
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="goods_infor_top">
+  <view class="goods_title">
+   <text class="tname">商店名称:</text> <text class="tname">{{shopname}}</text>
+   <view class="goods_collect_btn" bindtap="collect">
+      <view >
+        <image src="../../images/shop/location.png" class="goods_collect_img"></image>
+      </view> 
+      <text>位置</text>
+    </view>  
+  </view>
+</view>
+
+<view class="goods_infor_pre">
+  <text>商店介绍</text>
+    <view>
+      <text>{{shopdec}}</text>
+    </view>
+</view>
+
+<view class="goods_detail">
+  <view class="goods_detail_title">商品详情</view>
+</view>
+
+
+<scroll-view  scroll-y="true" bindscrolltolower="onScrollLoad"> 
+<view  wx:for="{{goods}}" wx:key="*this">
+
+  <view class="goodslist">
+    <image src='{{item.goodssrc}}' class="goodslistmsg"></image>
+    <view class="list2">
+     <text class="goodsname">{{item.goodsname}}</text>
+     <text class="goodsp">价格:{{item.goodsprice}}</text>
+   </view>
+  
+</view>
+
+</view>
+  </scroll-view>
+

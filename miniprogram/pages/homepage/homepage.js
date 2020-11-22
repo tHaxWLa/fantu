@@ -91,7 +91,7 @@ Page({
   //菜品浏览
   btnclick2: function() {
     wx.navigateTo({
-      url: '../shop/shop'
+      url: '../canteen/canteen'
     })
   },
 
