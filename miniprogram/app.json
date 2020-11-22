@@ -18,7 +18,8 @@
     "pages/allmap/allmap",
     "pages/personalcenter/personalcenter",
     "pages/shop/shop",
-    "pages/canteen/canteen"
+    "pages/canteen/canteen",
+    "pages/search/search"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
