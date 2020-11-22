@@ -12,7 +12,7 @@
 <view class="goods_infor_top">
   <view class="goods_title">
    <text class="tname">商店名称:</text> <text class="tname">{{shopname}}</text>
-   <view class="goods_collect_btn" bindtap="collect">
+   <view class="goods_collect_btn" bindtap="gotocanteen">
       <view >
         <image src="../../images/shop/location.png" class="goods_collect_img"></image>
       </view> 

@@ -19,7 +19,11 @@
     "pages/personalcenter/personalcenter",
     "pages/shop/shop",
     "pages/canteen/canteen",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/personalcenter/footprint/footprint",
+    "pages/personalcenter/back/back",
+    "pages/personalcenter/like/like",
+    "pages/personalcenter/set/set"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

@@ -1,4 +1,5 @@
 // miniprogram/pages/personalcenter/personalcenter.js
+const app = getApp();
 Page({
 
   /**
@@ -38,6 +39,30 @@ Page({
       icon:'none',
       duration:1000
      })
+  },
+  tofootprint:function()
+  {
+    wx.navigateTo({
+      url: '../../pages/personalcenter/footprint/footprint',
+    })
+  },
+  toset:function()
+  {
+    wx.navigateTo({
+      url: '../../pages/personalcenter/set/set',
+    })
+  },
+  tolike:function()
+  {
+    wx.navigateTo({
+      url: '../../pages/personalcenter/like/like',
+    })
+  },
+  toback:function()
+  {
+    wx.navigateTo({
+      url: '../../pages/personalcenter/back/back',
+    })
   },
   tipp:function()
   {
