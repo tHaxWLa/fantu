@@ -9,6 +9,7 @@ Page({
     isShowUserName: false,
     userInfo: null,
   },
+  
   onGotUserInfo: function (e) {
     if (e.detail.userInfo) {
       var user = e.detail.userInfo;
@@ -17,7 +18,6 @@ Page({
         userInfo: e.detail.userInfo,
       })
       user.openid = app.globalData.openid;
-      app._saveUserInfo(user);
     } else {
       app._showSettingToast('登陆需要允许授权');
     }

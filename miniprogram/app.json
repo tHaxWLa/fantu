@@ -21,7 +21,6 @@
     "pages/canteen/canteen",
     "pages/search/search",
     "pages/personalcenter/footprint/footprint",
-    "pages/personalcenter/back/back",
     "pages/personalcenter/like/like",
     "pages/personalcenter/set/set"
   ],
