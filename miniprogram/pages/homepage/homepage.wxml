@@ -43,7 +43,7 @@
       <image class="category-item-image" src="../../images/homepage/canting1.png" />
       <text class="category-item-text">京元</text>
     </view>
-    <view bindtap='btnclick2' class="category-item">
+    <view bindtap='more' class="category-item">
       <image class="category-item-image" src="../../images/homepage/others.png" />
       <text class="category-item-text">其他餐厅</text>
     </view>

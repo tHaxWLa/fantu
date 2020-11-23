@@ -94,6 +94,11 @@ Page({
       url: '../canteen/canteen'
     })
   },
+  more: function() {
+    wx.navigateTo({
+      url: '../homepage/more/more'
+    })
+  },
 
 
 })
