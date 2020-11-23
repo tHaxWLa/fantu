@@ -4,6 +4,7 @@
 </view>
 <view class="store" style='position:fixed; left:0px; top:0px'>
     <view class="store_each" wx:for="{{array}}" wx:for-item="item">
+      
         <text bindtap="btnclick" style='position:fixed; width: {{item.width}}px;height: {{item.height}}px;left:{{item.locationx}}px;top:{{item.locationy}}px;font-size:10px;'>{{item.name}}</text>
     </view>
 </view>
