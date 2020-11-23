@@ -1,6 +1,8 @@
 // miniprogram/pages/homepage/homepage.js
 const app = getApp()
 let searchKey = null
+const db=wx.cloud.database();
+const _ = db.command
 Page({
 
   /**
@@ -80,7 +82,18 @@ Page({
   getSearchKey(event) { //获取搜索词
     console.log("搜索词", event.detail.value)
     searchKey = event.detail.value
+    db.collection('dish').where({
+        img_name: _.eq(searchKey)
+      
+    }).get({
+      success: function(res) {
+      // 输出 [{ "title": "The Catcher in the Rye", ... }]
+      console.log('查询成功',res.data)
+    }
+    })
+
   },
+
   goSearch() { //去搜索页
     wx.navigateTo({
       url: '../search/search?searchKey=' + searchKey
@@ -92,11 +105,6 @@ Page({
   btnclick2: function() {
     wx.navigateTo({
       url: '../canteen/canteen'
-    })
-  },
-  more: function() {
-    wx.navigateTo({
-      url: '../homepage/more/more'
     })
   },
 
