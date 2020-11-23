@@ -59,7 +59,6 @@ page{
 .image{
   width:45rpx;
   height:45rpx;
-  padding-left: 50rpx;
 }
 .image1{
   width:45rpx;

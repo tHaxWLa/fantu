@@ -5,7 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    goods:[
+      {
+          goodsname:"菜名",
+          goodslocation:"小米米",
+          goodssrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
+      },
+      {
+        goodsname:"菜名1",
+        goodslocation:"小米米",
+        goodssrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
+    },
+    {
+      goodsname:"菜名2",
+      goodslocation:"小米米",
+      goodssrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
+  },
+  {
+    goodsname:"菜名2",
+    goodslocation:"小米米",
+    goodssrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
+},
+  {
+    goodsname:"菜名2",
+    goodslocation:"小米米",
+    goodssrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
+  },
+    ]
   },
 
   /**

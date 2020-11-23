@@ -1,11 +1,44 @@
 // miniprogram/pages/search/search.js
+const app = getApp()
+let searchKey = null
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+        ans:[
+          {
+              foodsrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg',
+              foodname:"菜名",
+              foodfrom:"小米米3"
 
+          },
+          {
+            foodsrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg',
+            foodname:"菜名",
+            foodfrom:"小米米2"
+
+        },
+        {
+          foodsrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg',
+          foodname:"菜名",
+          foodfrom:"小米米1"
+
+      },
+      {
+        foodsrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg',
+        foodname:"菜名",
+        foodfrom:"小米米1"
+
+    },
+    {
+      foodsrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg',
+      foodname:"菜名",
+      foodfrom:"小米米1"
+
+  },
+        ]
   },
 
   /**
@@ -62,5 +95,18 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  
+  getSearchKey(event) { //获取搜索词
+    console.log("搜索词", event.detail.value)
+    searchKey = event.detail.value
+  },
+  goSearch() { //去搜索页
+    wx.showToast({
+      title: '搜索',
+      icon:'none',
+      duration:1000
+     })
+  
+  },
 })

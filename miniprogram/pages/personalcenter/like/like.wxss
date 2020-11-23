@@ -1,1 +1,62 @@
-/* miniprogram/pages/personalcenter/like/like.wxss */
+
+.goodslist {
+  padding: 0 0px;
+  margin-top: 10px;
+  background-color: #FFF;
+  display: flex;
+  /*row 横向  column 列表  */
+  width: 100%;
+  flex-direction: row;
+}
+.list2 {
+  padding-top: 6px;
+  padding-right: 6px;
+  padding-bottom: 6px;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: column;
+}
+.goods_detail_title {
+  padding: 10px 0;
+  font-size: 14px;
+}
+.goodslistmsg{
+  height: 100px;
+  width: 120px;
+  padding-top: 6px;
+  padding-right: 6px;
+  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 50px;
+}
+.goodsname{
+  display:flex;
+align-items:center;
+justify-content:center;
+padding-top: 15px;
+}
+.goodsp{
+  display:flex;
+align-items:center;
+justify-content:center;
+padding-top: 20px;
+}
+.headtop{
+  font-size: medium;
+  color: red;
+}
+.head{
+  position: fixed;
+  top:0%;
+  z-index: 999;
+  background-color: white;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+}
+.head1{
+  top:0%;
+  background-color: white;
+  width: 100%;
+  height: 50px;
+}

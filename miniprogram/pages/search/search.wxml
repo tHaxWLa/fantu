@@ -1,2 +1,22 @@
-<!--miniprogram/pages/search/search.wxml-->
-<button>这是搜索页</button>
+<view class="searchRoot head">
+  <input class="searchInput" bindinput="getSearchKey" placeholder="搜索菜品"></input>
+  <image class="searchImg" bindtap="goSearch" src="../../images/homepage/search.png"></image>
+</view>
+<view class="head1"></view>
+
+
+<scroll-view  scroll-y="true" bindscrolltolower="onScrollLoad"> 
+<view  wx:for="{{ans}}" wx:key="*this">
+
+  <view class="goodslist">
+    <image src='{{item.foodsrc}}' class="goodslistmsg"></image>
+    <view class="list2">
+      <text class="goodsp">{{item.foodfrom}}</text>
+     <text class="goodsname">{{item.foodname}}</text>
+     
+   </view>
+  
+</view>
+
+</view>
+ </scroll-view>
