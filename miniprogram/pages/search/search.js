@@ -1,14 +1,15 @@
 // miniprogram/pages/search/search.js
 const app = getApp()
-let searchKey = null
+const db=wx.cloud.database();
+const _=db.command
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    SearchResult:null,
     SearchKey:null,
+    SearchResult:null,
         ans:[
           {
               foodsrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg',
@@ -48,12 +49,27 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    console.log('result',options.searchResult)
+    console.log('result',options.searchKey)
     that.setData({
       SearchKey:options.searchKey,
-      SearchResult:options.searchResult//返回改菜品的_id（目前只能返回一个）
     })
-  
+    db.collection('dish').where({
+      'img_name':
+      {
+        $regex:'.*' + options.searchKey + '.*',		//queryContent表示欲查询的内容，‘.*’等同于SQL中的‘%’
+        $options: 'i'	
+      }
+    })
+    .get({
+      success: function(res) {
+        // res.data 是包含以上定义的一条记录的数组
+        var that = this
+        console.log("搜索成功",res.data)
+        that.setData({
+          SearchResult:res.data//返回改菜品的_id（目前只能返回一个）
+        })
+      }
+    })
   },
 
   /**
