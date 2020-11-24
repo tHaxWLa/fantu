@@ -134,13 +134,13 @@ Page({
     wx.showNavigationBarLoading();
     let that = this;
     this.setData({
-     talksAnimationData: that.animation.export()
+     
     })
     wx.hideNavigationBarLoading();
     },
     onScrollLoad: function() {
       // 加载新的数据
-      this.loadTalks();
+      //this.loadTalks();
       },
 
       bindInputBlur: function(e) {
@@ -159,13 +159,17 @@ Page({
      content: this.data.inputValue,
      talkTime: time,
     })
-   
-    that.data.inputValue = '';
+   if(that.data.inputValue != ''||that.data.inputValue!=null)
+   {
+      that.data.inputValue = '';
   
     that.setData({
      talks: temp,
      inputValue: that.data.inputValue,
     })
+   }
+   
+   
    
    },
 
