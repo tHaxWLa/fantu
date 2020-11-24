@@ -1,7 +1,10 @@
 /**index.wxss**/
 
 /* 搜索框 */
-
+.head{
+  width: 100%;
+  height: 10px;
+}
 .searchRoot {
   background: rgb(255, 255, 255);
   padding: 25rpx;
@@ -13,9 +16,7 @@
 
 .searchInput {
   flex: 1;
-  height: 70rpx;
-  
-  
+  height: 70rpx; 
   padding-left: 30rpx;
   border: 1px solid #f4c903;
   border-radius: 30rpx;
@@ -28,7 +29,7 @@
 }
 
 .category-panel1 {
-  height: 250px;
+  height: 200px;
   width: 100%;
   display: flex;
   color: #666;
@@ -38,7 +39,7 @@
 }
 
 .category-panel2 {
-  height: 90px;
+  height: 80px;
   width: 100%;
   display: flex;
   color: #666;
@@ -49,14 +50,14 @@
 
 .category-item {
   display: flex;
-  width: 60px;
+  width: 50px;
   text-align: center;
   flex-direction: column;
 }
 
 .category-item-image {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   overflow: unset;
   padding: 15px 12px 0 6px;
 }

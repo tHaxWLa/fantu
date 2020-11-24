@@ -30,111 +30,11 @@ Page({
     })
     },
     showTalks: function() {
-    // 加载数据
-    this.loadTalks();
-    // 设置动画内容为：使用绝对定位显示区域，高度变为100%
-    this.animation.bottom("0rpx").height("100%").step()
-    this.setData({
-     talksAnimationData: this.animation.export()
+    wx.navigateTo({
+      url: '../../pages/browses/talks/talks',
     })
     },
     
-    hideTalks: function() {
-    // 设置动画内容为：使用绝对定位隐藏整个区域，高度变为0
-    this.animation.bottom("-100%").height("0rpx").step()
-    this.setData({
-     talksAnimationData: this.animation.export()
-    })
-    },
-    
-    // 加载数据
-    loadTalks: function() {
-    wx.showNavigationBarLoading();
-    let that = this;
-    this.setData({
-     talksAnimationData: that.animation.export()
-    })
-    wx.hideNavigationBarLoading();
-    },
-    
-    onScrollLoad: function() {
-    // 加载新的数据
-   // this.loadTalks();
-    },
-    //下拉评论框隐藏
-    touchStart: function(e) {
-    let touchStart = e.touches[0].clientY;
-    this.setData({
-     touchStart,
-    })
-    },
-    touchMove: function(e) {
-    let touchLength = e.touches[0].clientY - this.data.touchStart;
-    console.log(touchLength - 100)
-    if (touchLength > 100) {
-     this.animation.bottom("-100%").height("0rpx").step()
-     this.setData({
-     talksAnimationData: this.animation.export(),
-     })
-    }
-    },
-    //输入框失去焦点时触发
-    bindInputBlur: function(e) {
-    console.log(e)
-    this.data.inputValue = e.detail.value;
-    },
-    //点击发布，发布评论
-    faBu: function(e) {
-    const that = this;
-    const _index = e.currentTarget.dataset.index; 
-   
-    
-    let temp=that.data.video_list[0].talks;  
-    temp.unshift({
-     avatarUrl: 'https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2070453827,1163403148&fm=26&gp=0.jpg',
-     nickName: '饭饭',
-     content: this.data.inputValue,
-     talkTime: '刚刚'/*time*/
-    })
-    wx.showToast({
-      title:'s2s',
-      icon:'none',
-      duration:1000
-     })
-    that.data.inputValue = '';
-    that.setData({
-     talks: temp,
-     inputValue: that.data.inputValue,
-     talksAnimationData: that.animation.export()
-    })
-    },
-
-
-    fbuu: function (e) {
-      const vm = this;
-      const that = this;
-      const _index = e.currentTarget.dataset.index; 
-      let temp=vm.data.video_list[ 0].talks;   
-      wx.showToast({
-        title:'s2s',
-        icon:'none',
-        duration:1000
-       })
-      temp.unshift({
-       avatarUrl: 'https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2070453827,1163403148&fm=26&gp=0.jpg',
-       nickName: '饭饭',
-       content: this.data.inputValue,
-       talkTime: '刚刚'/*time*/
-      })
-      that.data.inputValue = '';
-      that.setData({
-       talks: temp,
-       inputValue: that.data.inputValue,
-       talksAnimationData: that.animation.export()
-      })
-     },
-
-
   zan: function (e) {
     const vm = this;
     const that = this;

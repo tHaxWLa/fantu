@@ -1,2 +1,16 @@
-<!--miniprogram/pages/personalcenter/set/set.wxml-->
-<text>miniprogram/pages/personalcenter/set/set.wxml</text>
+
+  <view class="category-panel2">
+   
+    <view bindtap='btnclick2' class="category-item">
+      <view>6666666</view>
+    </view>
+
+    <view bindtap='btnclick2' class="category-item">
+      <view>6666666</view>
+    </view>
+
+    <view bindtap='btnclick2' class="category-item">
+      <view>6666666</view>
+    </view>
+
+  </view>

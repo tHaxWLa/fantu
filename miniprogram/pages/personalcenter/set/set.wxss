@@ -1,1 +1,20 @@
-/* miniprogram/pages/personalcenter/set/set.wxss */
+
+.category-panel1 {
+  height: 250px;
+  width: 100%;
+  display: flex;
+  color: #666;
+  flex-direction: column;
+  font-size: 11px;
+  justify-content: space-around;
+}
+
+.category-panel2 {
+  height: 90px;
+  width: 100%;
+  display: flex;
+  color: #666;
+  flex-direction: row;
+  font-size: 11px;
+  justify-content: space-around;
+}
