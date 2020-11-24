@@ -7,6 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    SearchResult:null,
+    SearchKey:null,
         ans:[
           {
               foodsrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg',
@@ -45,7 +47,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this
+    console.log('result',options.searchResult)
+    that.setData({
+      SearchKey:options.searchKey,
+      SearchResult:options.searchResult//返回改菜品的_id（目前只能返回一个）
+    })
+  
   },
 
   /**

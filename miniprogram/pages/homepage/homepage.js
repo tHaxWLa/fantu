@@ -1,14 +1,16 @@
 // miniprogram/pages/homepage/homepage.js
 const app = getApp()
-let searchKey = null
 const db=wx.cloud.database();
-const _ = db.command
+const _=db.command
+let searchKey = null
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    searchKey:'',
+    searchResult:null,
     banner: [
       {
         picUrl:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1532844980,1238263623&fm=26&gp=0.jpg'
@@ -78,26 +80,39 @@ Page({
 
   },
 
-
   getSearchKey(event) { //获取搜索词
+    var _this=this;
     console.log("搜索词", event.detail.value)
     searchKey = event.detail.value
     db.collection('dish').where({
-        img_name: _.eq(searchKey)
-      
+      img_name: _.eq(searchKey)
     }).get({
       success: function(res) {
+        _this.setData({
+          searchKey:searchKey,
+          searchResult:res.data['0']['_id']
+          })
       // 输出 [{ "title": "The Catcher in the Rye", ... }]
-      console.log('查询成功',res.data)
+      console.log('查询成功',res.data['0']['_id'])
     }
+    
     })
-
   },
-
+  
   goSearch() { //去搜索页
+    var that = this
     wx.navigateTo({
-      url: '../search/search?searchKey=' + searchKey
+      url: '../search/search?searchKey=' + that.data.searchKey+'&searchResult=' +that.data.searchResult
     })
+    db.collection('dish').where({
+      img_name: _.eq(searchKey)
+    
+  }).get({
+    success: function(res) {
+    // 输出 [{ "title": "The Catcher in the Rye", ... }]
+    console.log('查询成功',res.data)
+  }
+  })
   },
 
 
