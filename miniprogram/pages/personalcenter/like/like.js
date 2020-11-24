@@ -88,5 +88,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  goshop:function(){
+    wx.navigateTo({
+      url: '../../shop/shop',
+    })
   }
 })

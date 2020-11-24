@@ -1,11 +1,43 @@
-// miniprogram/pages/personalcenter/footprint/footprint.js
+// miniprogram/pages/personalcenter/like/like.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    shops:[
+      {
+          shopname:"店名",
+          shoplocation:"食堂名",
+          shopsrc:'../../../images/shop/img.png'
+      },
+      {
+        shopname:"店名",
+        shoplocation:"食堂名",
+        shopsrc:'../../../images/shop/img.png'
+      },
+      {
+        shopname:"店名",
+        shoplocation:"食堂名",
+        shopsrc:'../../../images/shop/img.png'
+      },
+      {
+        shopname:"店名",
+        shoplocation:"食堂名",
+        shopsrc:'../../../images/shop/img.png'
+      },
+      {
+        shopname:"店名",
+        shoplocation:"食堂名",
+        shopsrc:'../../../images/shop/img.png'
+      },
+      {
+        shopname:"店名",
+        shoplocation:"食堂名",
+        shopsrc:'../../../images/shop/img.png'
+      },
+    
+    ]
   },
 
   /**
@@ -62,5 +94,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  goshop:function(){
+    wx.navigateTo({
+      url: '../../shop/shop',
+    })
   }
 })

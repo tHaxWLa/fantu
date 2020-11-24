@@ -7,7 +7,7 @@
 <scroll-view  scroll-y="true" bindscrolltolower="onScrollLoad"> 
 <view  wx:for="{{goods}}" wx:key="*this">
 
-  <view class="goodslist">
+  <view class="goodslist" bindtap="goshop">
     <image src='{{item.goodssrc}}' class="goodslistmsg"></image>
     <view class="list2">
       <text class="goodsp">{{item.goodslocation}}</text>
