@@ -13,7 +13,7 @@ Page({
 
 
    video_list:[
-
+/*shopname:"店铺名*/
    ],
    pageY:'',    // 触摸起始高度坐标
    animation:'',  // 视频划动动画
