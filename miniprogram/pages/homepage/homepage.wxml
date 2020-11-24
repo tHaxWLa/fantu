@@ -1,5 +1,4 @@
-<!-- 轮播图 -->
-
+<view class="head"></view>
 <view>
   <swiper indicator-dots="{{true}}" indicator-color="#f4c903" autoplay="true" circular="true">
     <block wx:for="{{banner}}" wx:key="banner">
@@ -9,14 +8,14 @@
     </block>
   </swiper>
 </view>
-
+<view class="head"></view>
 <!-- 搜索框 -->
 <view class="searchRoot">
   <input class="searchInput" bindinput="getSearchKey" placeholder="搜索菜品"></input>
   <image class="searchImg" bindtap="goSearch" src="../../images/homepage/search.png"></image>
 </view>
 
-
+<view class="head"></view>
 <view class="category-panel1">
   <view class="category-panel2">
    
