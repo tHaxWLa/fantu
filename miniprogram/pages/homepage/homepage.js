@@ -3,6 +3,8 @@ const app = getApp()
 const db=wx.cloud.database();
 const _=db.command
 let searchKey = null
+var nickName='';
+var avatarUrl='';
 Page({
 
   /**
@@ -11,6 +13,8 @@ Page({
   data: {
     searchKey:'',
     searchResult:null,
+    nickName:'', 
+    avatarUrl:'',
     banner: [
       {
         picUrl:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1532844980,1238263623&fm=26&gp=0.jpg'
@@ -28,7 +32,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+    var _this=this
+    wx.getUserInfo({
+      success: function(res) {
+          var userInfo = res.userInfo
+          var anickName = userInfo.nickName
+          var aavatarUrl = userInfo.avatarUrl
+          nickName=anickName,
+          avatarUrl=aavatarUrl
+          wx.cloud.callFunction({
+            name: 'createcollection',// 云函数名称【刚刚创建的云函数文件的名字】
+            data: {
+              nickName:nickName,
+              avatarUrl:avatarUrl
+            },
+            success: function (res) {
+               {
+                 console.log(res)
+                 console.log('创建数据库函数完成调用')
+               }
+             },
+             fail: console.error
+          })
+      }
+    })
+
+
+
   },
 
   /**
