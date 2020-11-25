@@ -11,6 +11,8 @@ Page({
     SearchKey:null,
     SearchResult:null,
         ans:[
+
+          
         ]
   },
 
