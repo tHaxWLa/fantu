@@ -21,10 +21,13 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    console.log('result',options.searchKey)
-    that.setData({
-      SearchKey:options.searchKey,
-    })
+    if(options.searchKey)
+    {
+      console.log('result',options.searchKey)
+      that.setData({
+        SearchKey:options.searchKey,
+      })
+    }
     db.collection('dish').where({
       'img_name':
       {
@@ -95,7 +98,7 @@ Page({
   
   getSearchKey(event) { //获取搜索词
     console.log("搜索词", event.detail.value)
-    searchKey = event.detail.value
+    this.data.SearchKey = event.detail.value
   },
 
   goSearch(event) { //去搜索页
@@ -104,5 +107,24 @@ Page({
       icon:'none',
       duration:1000
      })
+     db.collection('dish').where({
+      'img_name':
+      {
+        $regex:'.*' + this.data.SearchKey + '.*',		
+        $options: 'i'	
+      }
+    })
+    .get({
+      success: function(res) {
+        // res.data 是包含以上定义的一条记录的数组
+        console.log("搜索成功",res.data)
+        that.setData({
+          ans:res.data//返回改菜品的_id（目前只能返回一个）
+        })
+      },
+      
+    })
+    var that = this
+    this.onLoad
   },
 })
