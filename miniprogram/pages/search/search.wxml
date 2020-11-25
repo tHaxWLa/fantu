@@ -4,6 +4,8 @@
 </view>
 <view class="head1"> </view>
 
+
+
 <scroll-view  scroll-y="true" bindscrolltolower="onScrollLoad"> 
   <view  wx:for="{{ans}}" wx:key="*this">
       <view class="goodslist">
