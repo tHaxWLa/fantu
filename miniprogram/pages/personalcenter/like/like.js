@@ -6,31 +6,7 @@ Page({
    */
   data: {
     goods:[
-      {
-          goodsname:"菜名",
-          goodslocation:"小米米",
-          goodssrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
-      },
-      {
-        goodsname:"菜名1",
-        goodslocation:"小米米",
-        goodssrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
-    },
-    {
-      goodsname:"菜名2",
-      goodslocation:"小米米",
-      goodssrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
-  },
-  {
-    goodsname:"菜名2",
-    goodslocation:"小米米",
-    goodssrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
-},
-  {
-    goodsname:"菜名2",
-    goodslocation:"小米米",
-    goodssrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
-  },
+
     ]
   },
 
@@ -45,7 +21,23 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    var _this=this;
+    wx.cloud.callFunction({
+      name: 'getuserlist',// 云函数名称【刚刚创建的云函数文件的名字】
+      data: {
+      },
+      
+      success: function (res) {
+         {
+          console.log(res.result.data)
+          _this.setData({
+            goods:res.result.data
+            })
+           console.log('调用云函数获取用户数据成功')
+         }
+       },
+       fail: console.error
+    })
   },
 
   /**

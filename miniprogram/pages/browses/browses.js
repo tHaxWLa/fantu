@@ -229,13 +229,17 @@ jmp_go: function() {
 this.setData({
     windowHeight:wx.getSystemInfoSync().windowHeight
    })
-   db.collection('dish').get().then(res => {
+   db.collection('dish').aggregate().sample({
+     size: 20
+   }).end().then(res => {
     this.setData({
-      video_list:res.data
+      video_list:res.list
       }
     )
-    console.log(res.data)
+    console.log(res.list)
   })
+
+
   },
 
   /**
