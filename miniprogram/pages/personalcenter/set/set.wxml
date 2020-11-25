@@ -1,16 +1,17 @@
+<viwe class="head"> 
+  <text class="headtop">我的偏好设置</text>
+</viwe>
+<view class="head1">
 
-  <view class="category-panel2">
-   
-    <view bindtap='btnclick2' class="category-item">
-      <view>6666666</view>
-    </view>
+</view>
 
-    <view bindtap='btnclick2' class="category-item">
-      <view>6666666</view>
-    </view>
+<block class="father">
+ <view  wx:for="{{liketags}}" wx:key="*this" class="son">
 
-    <view bindtap='btnclick2' class="category-item">
-      <view>6666666</view>
-    </view>
+  <text class="sbtn">{{item.tagname}}</text>
+<block class="sb">66666</block>
+<text class="sbtn">{{item.tagname}}</text>
+</view> 
+</block>
 
-  </view>
+

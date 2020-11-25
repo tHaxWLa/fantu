@@ -1,20 +1,21 @@
 
-.category-panel1 {
-  height: 250px;
-  width: 100%;
-  display: flex;
-  color: #666;
-  flex-direction: column;
-  font-size: 11px;
-  justify-content: space-around;
+.sbtn{
+  border: 1px solid #f4c903;
+  padding: 3rpx;
+  align-self: start;
+  text-align: center;
 }
-
-.category-panel2 {
-  height: 90px;
-  width: 100%;
+.father{
+  padding: 3%;
   display: flex;
-  color: #666;
-  flex-direction: row;
-  font-size: 11px;
-  justify-content: space-around;
+}
+.son{
+  padding: 2%;
+  display: flex;
+flex-direction: row;
+align-items: center;
+}
+.sb{
+  border: 1px solid #f4c903;
+  padding: 3rpx;
 }
