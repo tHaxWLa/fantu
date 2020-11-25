@@ -84,6 +84,19 @@ Page({
     var _this=this;
     console.log("搜索词", event.detail.value)
     _this.data.searchKey = event.detail.value
+    searchKey = event.detail.value
+    db.collection('dish').where({
+      img_name: _.eq(searchKey)
+    }).get({
+      success: function(res) {
+        _this.setData({
+          searchKey:searchKey
+          })
+      // 输出 [{ "title": "The Catcher in the Rye", ... }]
+      console.log('查询成功',res.data)
+    }
+    
+    })
   },
   
   goSearch() { //去搜索页
@@ -91,6 +104,15 @@ Page({
     wx.navigateTo({
       url: '../search/search?searchKey=' + that.data.searchKey
     })
+    db.collection('dish').where({
+      img_name: _.eq(searchKey)
+    
+  }).get({
+    success: function(res) {
+    // 输出 [{ "title": "The Catcher in the Rye", ... }]
+    console.log('查询成功',res.data)
+  }
+  })
 
   },
 

@@ -5,20 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
   array:
-  [
-   
-    
-]
-
+  [ ]
   },
-  btnclick:
-    function (e) {
-      var kind = e.target.id
-      console.log(kind);
+  btnclick:function (e) {
     wx.navigateTo({
-      url: '/pages/shop/shop?kind='+kind
+      url: '/pages/shop/shop'
     })
   },
   /**
