@@ -11,7 +11,6 @@ Page({
     SearchKey:null,
     SearchResult:null,
         ans:[
-         
         ]
   },
 
@@ -34,13 +33,13 @@ Page({
     .get({
       success: function(res) {
         // res.data 是包含以上定义的一条记录的数组
-        var that = this
         console.log("搜索成功",res.data)
         that.setData({
           ans:res.data//返回改菜品的_id（目前只能返回一个）
         })
       }
     })
+
   },
 
   /**
@@ -97,7 +96,7 @@ Page({
     searchKey = event.detail.value
   },
 
-  goSearch: function(event) { //去搜索页
+  goSearch(event) { //去搜索页
     wx.showToast({
       title: '搜索',
       icon:'none',
