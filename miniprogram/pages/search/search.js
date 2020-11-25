@@ -11,36 +11,7 @@ Page({
     SearchKey:null,
     SearchResult:null,
         ans:[
-          {
-              foodsrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg',
-              foodname:"菜名",
-              foodfrom:"小米米3"
-
-          },
-          {
-            foodsrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg',
-            foodname:"菜名",
-            foodfrom:"小米米2"
-
-        },
-        {
-          foodsrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg',
-          foodname:"菜名",
-          foodfrom:"小米米1"
-
-      },
-      {
-        foodsrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg',
-        foodname:"菜名",
-        foodfrom:"小米米1"
-
-    },
-    {
-      foodsrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg',
-      foodname:"菜名",
-      foodfrom:"小米米1"
-
-  },
+         
         ]
   },
 
@@ -66,7 +37,7 @@ Page({
         var that = this
         console.log("搜索成功",res.data)
         that.setData({
-          SearchResult:res.data//返回改菜品的_id（目前只能返回一个）
+          ans:res.data//返回改菜品的_id（目前只能返回一个）
         })
       }
     })
@@ -125,12 +96,12 @@ Page({
     console.log("搜索词", event.detail.value)
     searchKey = event.detail.value
   },
-  goSearch() { //去搜索页
+
+  goSearch: function(event) { //去搜索页
     wx.showToast({
       title: '搜索',
       icon:'none',
       duration:1000
      })
-  
   },
 })
