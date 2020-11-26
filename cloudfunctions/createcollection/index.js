@@ -26,10 +26,11 @@ console.log(usertableinfo.data)
       }
     })
     console.log('add info success')
-   
+    return('用户不在表内，数据库创建成功')
   }else{
     console.log('usertableinfo.data != null')
     console.log('the user is on the usertable')
+    return('用户已在表内，无需再创建数据库')
   }
 
 
