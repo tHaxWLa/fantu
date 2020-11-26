@@ -9,14 +9,9 @@
               <view class="weui-cell__hd">
               <checkbox value="{{item.value}}" checked="{{item.istag}}"/>
             </view>
-            <view class="weui-cell__bd">{{item.tagname}}+{{index%2==0}}+0</view>
+            <view class="weui-cell__bd">{{item.tagname}}</view>
             </view>
-            <view  class="body2">
-              <view class="weui-cell__hd">
-              <checkbox value="{{item.value}}" checked="{{item.istag}}"/>
-            </view>
-            <view class="weui-cell__bd">{{item.tagname}}+{{index%2==1}}+1</view>
-            </view>
+           
            
           </label>
         </checkbox-group>
