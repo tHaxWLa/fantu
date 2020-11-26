@@ -23,7 +23,7 @@ page{
 .name{
   line-height: 60rpx;
   width: 200rpx;
-  font-size: 80rpx;
+  font-size: auto;
   text-align: center
 }
 .float{ 
