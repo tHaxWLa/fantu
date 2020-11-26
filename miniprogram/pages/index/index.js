@@ -1,4 +1,5 @@
 // miniprogram/pages/index/index.js
+var app=getApp();     // 取得全局App
 Page({
 
   /**
@@ -16,11 +17,15 @@ Page({
   onLoad: function (options) {
     var that = this;
     // 查看是否授权
+    console.log("全局用户信息：",getApp().globalData.userInfo)
     wx.getSetting({
         success: function(res) {
             if (res.authSetting['scope.userInfo']) {
                 wx.getUserInfo({
                     success: function(res) {
+                      app.globalData.userInfo = res.userInfo
+                      console.log("已经授权过")
+                      console.log(getApp().globalData.userInfo)
                       wx.switchTab({
                         url: '../homepage/homepage',
                       })
@@ -112,6 +117,8 @@ Page({
         // 获取到用户的信息了，打印到控制台上看下
         console.log("用户的信息如下：");
         console.log(e.detail.userInfo);
+        app.globalData.userInfo = e.detail.userInfo
+        console.log("全局用户信息：",getApp().globalData.userInfo)
         //授权成功后,通过改变 isHide 的值，让实现页面显示出来，把授权页面隐藏起来
         that.setData({
             isHide: false

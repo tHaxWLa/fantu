@@ -1,6 +1,6 @@
 <!--pages/Restaurant1/Restaurant1.wxml-->
 <view class="map">
-  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map1.png?sign=06bab4fc69da643186505fbd25865289&t=1606363439" ></image>
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map1.jpg?sign=d687430d12b56a787bd23ed9f2b7125b&t=1606391545" ></image>
 </view>
 <view class="store">
     <view class="store_each" wx:for="{{array}}" wx:for-item="item">

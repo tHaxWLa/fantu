@@ -14,44 +14,6 @@ Page({
             content:'为什么这么好吃呢?',
             talkTime: '5分钟前'
           },
-        
-          {
-            avatarUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3474094557,370758738&fm=11&gp=0.jpg',
-            nickName: '小红',
-            content:'为什么这么好吃呢?',
-            talkTime: '5分钟前'
-          },
-          {
-            avatarUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3474094557,370758738&fm=11&gp=0.jpg',
-            nickName: '小红',
-            content:'为什么这么好吃呢?',
-            talkTime: '5分钟前'
-          },
-          {
-            avatarUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3474094557,370758738&fm=11&gp=0.jpg',
-            nickName: '小红',
-            content:'为什么这么好吃呢?',
-            talkTime: '5分钟前'
-          },
-          {
-            avatarUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3474094557,370758738&fm=11&gp=0.jpg',
-            nickName: '小红',
-            content:'为什么这么好吃呢?',
-            talkTime: '5分钟前'
-          },
-          {
-            avatarUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3474094557,370758738&fm=11&gp=0.jpg',
-            nickName: '小红',
-            content:'为什么这么好吃呢?',
-            talkTime: '5分钟前'
-          },
-          {
-            avatarUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3474094557,370758738&fm=11&gp=0.jpg',
-            nickName: '小红',
-            content:'为什么这么好吃呢?',
-            talkTime: '5分钟前'
-          },
-
           {
             avatarUrl: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3510986481,3852924315&fm=111&gp=0.jpg',
             nickName: '小天',

@@ -1,5 +1,6 @@
 // miniprogram/pages/personalcenter/personalcenter.js
 const app = getApp();
+const db=wx.cloud.database();
 Page({
 
   /**
@@ -17,7 +18,7 @@ Page({
         isShowUserName: true,
         userInfo: e.detail.userInfo,
       })
-      user.openid = app.globalData.openid;
+      console.log(user)      
     } else {
       app._showSettingToast('登陆需要允许授权');
     }
