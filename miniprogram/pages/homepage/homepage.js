@@ -48,8 +48,8 @@ Page({
             },
             success: function (res) {
                {
-                 console.log(res)
-                 console.log('创建数据库函数完成调用')
+                console.log('检测数据库函数完成调用')
+                console.log(res.result)
                }
              },
              fail: console.error

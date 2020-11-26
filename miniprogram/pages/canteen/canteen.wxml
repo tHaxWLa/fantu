@@ -1,9 +1,13 @@
 <!--pages/Restaurant1/Restaurant1.wxml-->
 <view class="map">
-  <image class="mapitem" src="../../images/canteen/map1.png" ></image>
+  <image class="mapitem" src="https://7375-sutest2020-ukd9i-1304294060.tcb.qcloud.la/images/canteen/map1.jpg?sign=d687430d12b56a787bd23ed9f2b7125b&t=1606391545" ></image>
 </view>
 <view class="store">
     <view class="store_each" wx:for="{{array}}" wx:for-item="item">
+<<<<<<< HEAD
         <text bindtap="btnclick" data-text="{{item.name}}"  style='writing-mode:vertical-lr;position:fixed; width: {{item.width*2.34}} rpx;height: {{item.height*2.34}}rpx;left:{{item.locationx*2.34}}rpx;top:{{item.locationy*2.34}}rpx;font-size:10px;'>{{item.name}}</text>
+=======
+        <text bindtap="btnclick" data-text="{{item.name}}" style='writing-mode:vertical-lr;position:fixed; width: {{item.width*2.34}} rpx;height: {{item.height*2.34}}rpx;left:{{item.locationx*2.34}}rpx;top:{{item.locationy*2.34}}rpx;font-size:10px;'>{{item.name}}</text>
+>>>>>>> 19ce1fd029ee50c1e70aec6aecc9522ca66e2650
     </view>
 </view>

@@ -8,9 +8,13 @@ Page({
   array:
   [ ]
   },
+<<<<<<< HEAD
 
   btnclick:function (event) {
     var that = this
+=======
+  btnclick:function (event) {
+>>>>>>> 19ce1fd029ee50c1e70aec6aecc9522ca66e2650
     console.log(event.currentTarget.dataset.text)
     wx.navigateTo({
       url: '/pages/shop/shop?Shop='+event.currentTarget.dataset.text

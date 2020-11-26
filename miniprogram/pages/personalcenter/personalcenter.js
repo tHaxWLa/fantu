@@ -1,5 +1,6 @@
 // miniprogram/pages/personalcenter/personalcenter.js
 const app = getApp();
+const db=wx.cloud.database();
 Page({
 
   /**
@@ -17,7 +18,35 @@ Page({
         isShowUserName: true,
         userInfo: e.detail.userInfo,
       })
-      user.openid = app.globalData.openid;
+      console.log(user)
+
+      wx.cloud.callFunction({
+        name: 'login',// 云函数名称【刚刚创建的云函数文件的名字】
+        data: {
+        },
+        success: function (res) {
+          {
+            console.log(res.result.openid)
+            console.log('登陆 获取openid调用成功')
+            db.collection('usertable').where({'useropenid':res.result.openid}).update({
+              // data 传入需要局部更新的数据
+              data: {
+                useropenid:res.result.openid,
+                username:user.nickName,
+                userimg:user.avatarUrl
+                // 表示将 done 字段置为 true
+              },
+              success: function(res) {
+                console.log(res)
+              }
+            })
+          }},
+        fail: console.error
+      })
+
+      
+     
+      
     } else {
       app._showSettingToast('登陆需要允许授权');
     }

@@ -7,93 +7,53 @@ Page({
   data: {
       liketags:[
         {
+          value:"1",
           tagname:"面食",
-          istag:true,
+          istag:false,
         },
         {
+          value:"2",
           tagname:"辣",
-          istag:true,
+          istag:false,
         },
         {
+          value:"3",
           tagname:"不辣",
-          istag:true,
+          istag:false,
         },
         {
+          value:"4",
           tagname:"甜",
-          istag:true,
+          istag:false,
         },
         {
+          value:"5",
           tagname:"辣",
-          istag:true,
+          istag:false,
         },
         {
+          value:"6",
           tagname:"不甜",
-          istag:true,
+          istag:false,
         },
         {
+          value:"7",
           tagname:"咸",
-          istag:true,
+          istag:false,
         },
         {
+          value:"8",
           tagname:"淡",
-          istag:true,
+          istag:false,
         },
         {
+          value:"9",
           tagname:"酸",
-          istag:true,
+          istag:false,
         },
-        {
-          tagname:"淡",
-          istag:true,
-        },
-        {
-          tagname:"酸",
-          istag:true,
-        },
-        {
-          tagname:"淡",
-          istag:true,
-        },
-        {
-          tagname:"酸",
-          istag:true,
-        },
-        {
-          tagname:"淡",
-          istag:true,
-        },
-        {
-          tagname:"酸",
-          istag:true,
-        },
-        {
-          tagname:"淡",
-          istag:true,
-        },
-        {
-          tagname:"酸",
-          istag:true,
-        },
-        {
-          tagname:"淡",
-          istag:true,
-        },
-        {
-          tagname:"酸",
-          istag:true,
-        },
-        {
-          tagname:"淡",
-          istag:true,
-        },
-        {
-          tagname:"酸",
-          istag:true,
-        },
-        {
-          tagname:"其他",
-          istag:true,
-        },
+    
+        
+        
       ]
   },
 
@@ -151,5 +111,27 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  checkboxChange(e) {
+   // console.log('checkbox发生change事件，携带value值为：', e.detail.value)
+
+    const items = this.data.liketags
+    console.log('checkbox发生change事件，携带value值为：', items)
+
+    const values = e.detail.value
+    for (let i = 0, lenI = items.length; i < lenI; ++i) {
+      items[i].istag = false
+
+      for (let j = 0, lenJ = values.length; j < lenJ; ++j) {
+        if (items[i].value === values[j]) {
+          items[i].istag = true
+          break
+        }
+      }
+    }
+
+    this.setData({
+      items
+    })
   }
 })
