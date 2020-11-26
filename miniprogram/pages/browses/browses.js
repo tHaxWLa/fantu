@@ -84,6 +84,14 @@ Page({
           fail: console.error
         })
 
+        db.collection().add({
+          // data 字段表示需新增的 JSON 数据
+          data: {  
+          }
+        }).then(res => {
+          console.log(res)
+        })
+
        if(!vm.data.video_list[_index]['show2'])//点赞后 如果有踩则取消踩 踩数量-1
        {
         _msg[_index]['show2'] = !vm.data.video_list[_index]['show2'];
@@ -226,9 +234,9 @@ jmp_go: function() {
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-this.setData({
-    windowHeight:wx.getSystemInfoSync().windowHeight
-   })
+    this.setData({
+        windowHeight:wx.getSystemInfoSync().windowHeight
+      })
    db.collection('dish').aggregate().sample({
      size: 20
    }).end().then(res => {
@@ -236,7 +244,7 @@ this.setData({
       video_list:res.list
       }
     )
-    console.log(res.list)
+    console.log('本次菜单列表：',res.list)
   })
 
 

@@ -16,7 +16,8 @@ App({
     } 
 
     this.globalData = {
-      userInfo:[] 
+      userInfo:[], 
+      useropenid:''
     }
   }
 })
