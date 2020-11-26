@@ -1,18 +1,19 @@
 <view class="video_box">
+
  <view bindtouchend="touchEnd" id="myVideo{{index}}" animation="{{animation}}" bindtouchstart="touchStart" bindtouchmove="touchMove" class="video_list" wx:for="{{video_list}}" data-index="{{index}}" wx:key="index" >
-  <text class="text1">{{item.img_name}}</text>
-  <text class="text0">#{{item.store}}</text>
-  <image class="image1" src="{{item.img_src}}" ></image>
- 
-  <image class='img1' hidden='{{item.show1}}' bindtap='zan' data-index='{{index}}' src='../../images/menuicon/xin.png'></image>
-  <image class='img1' hidden='{{!item.show1}}' bindtap='zan' data-index='{{index}}' src='../../images/menuicon/xin1.png'></image>
-  <text class='zannums'>{{item.zannum}}</text>
-  <image class='img2' hidden='{{item.show2}}' bindtap='cai' data-index='{{index}}' src='../../images/menuicon/cai1.png'></image>
-  <image class='img2' hidden='{{!item.show2}}' bindtap='cai' data-index='{{index}}' src='../../images/menuicon/cai.png'></image>
-  <text class='cainums'>{{item.cainum}}</text>
-  <image class="img3" src="../../images/menuicon/go1.png" bindtap='jmp_go'></image>
-  <image class="img4" src="../../images/menuicon/discuss.png" catchtap='showTalks'></image>
-<text class="text3">{{item.img_tex2}}</text>
+    <text class="text1">{{item.img_name}}</text>
+    <text class="text0">#{{item.store}}</text>
+    <image class="image1" src="{{item.img_src}}" ></image>
+  
+    <image class='img1' hidden='{{item.show1}}' bindtap='zan' data-index='{{index}}' src='../../images/menuicon/xin.png'></image>
+    <image class='img1' hidden='{{!item.show1}}' bindtap='zan' data-index='{{index}}' src='../../images/menuicon/xin1.png'></image>
+    <text class='zannums'>{{item.zannum}}</text>
+    <image class='img2' hidden='{{item.show2}}' bindtap='cai' data-index='{{index}}' src='../../images/menuicon/cai1.png'></image>
+    <image class='img2' hidden='{{!item.show2}}' bindtap='cai' data-index='{{index}}' src='../../images/menuicon/cai.png'></image>
+    <text class='cainums'>{{item.cainum}}</text>
+    <image class="img3" src="../../images/menuicon/go1.png" bindtap='jmp_go'></image>
+    <image class="img4" src="../../images/menuicon/discuss.png" catchtap='showTalks'></image>
+    <text class="text3">{{item.img_tex2}}</text>
  </view>
 
 
