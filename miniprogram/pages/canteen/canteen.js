@@ -8,9 +8,12 @@ Page({
   array:
   [ ]
   },
-  btnclick:function (e) {
+
+  btnclick:function (event) {
+    var that = this
+    console.log(event.currentTarget.dataset.text)
     wx.navigateTo({
-      url: '/pages/shop/shop'
+      url: '/pages/shop/shop?Shop='+event.currentTarget.dataset.text
     })
   },
   /**

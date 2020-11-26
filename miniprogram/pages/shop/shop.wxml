@@ -37,10 +37,10 @@
 <view  wx:for="{{goods}}" wx:key="*this">
 
   <view class="goodslist">
-    <image src='{{item.goodssrc}}' class="goodslistmsg"></image>
+    <image src='{{item.img_src}}' class="goodslistmsg"></image>
     <view class="list2">
-     <text class="goodsname">{{item.goodsname}}</text>
-     <text class="goodsp">价格:{{item.goodsprice}}</text>
+     <text class="goodsname">{{item.img_name}}</text>
+     <text class="goodsp">{{item.img_tex2}}</text>
    </view>
   
 </view>
