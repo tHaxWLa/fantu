@@ -15,6 +15,7 @@ Page({
         complete: res => {
           app.globalData.useropenid = res.result.openid
           console.log("全局变量内的用户openid：",getApp().globalData.useropenid)
+          
         }
       })
     // 查看是否授权
@@ -25,7 +26,7 @@ Page({
                     success: function(res) {
                       app.globalData.userInfo = res.userInfo
                       console.log("已经授权过")
-                      console.log(getApp().globalData.userInfo)
+                      console.log("全局变量内的用户信息：",getApp().globalData.userInfo)
                       wx.switchTab({
                         url: '../homepage/homepage',
                       })
