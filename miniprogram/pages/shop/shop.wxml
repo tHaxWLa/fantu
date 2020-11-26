@@ -1,13 +1,5 @@
 <view>
-  <text class="text1">招牌菜</text>
-  <swiper indicator-dots="{{indicatorDots}}" 
-    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}" wx:key="item" >
-      <swiper-item>
-        <image src="{{item}}" class="slide-image" />
-      </swiper-item>
-    </block>
-  </swiper>
+  <image src="{{img_src}}" class="slide-image" />
 </view>
 <view class="goods_infor_top">
   <view class="goods_title">
@@ -21,12 +13,6 @@
   </view>
 </view>
 
-<view class="goods_infor_pre">
-  <text>商店介绍</text>
-    <view>
-      <text>{{shopdec}}</text>
-    </view>
-</view>
 
 <view class="goods_detail">
   <view class="goods_detail_title">商品详情</view>

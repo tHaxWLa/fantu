@@ -9,6 +9,7 @@ Page({
   data: {
     shopname:"",
     shopmsg:null,
+    img_src:null,
     shopdec:"食惠快餐是一家主营快餐的店铺,这里有许多种类的荤菜和素菜,方便快捷",
     imgUrls: [
       'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3238431746,4177294693&fm=26&gp=0.jpg',
@@ -78,7 +79,18 @@ wx.navigateTo({
         })
       }
     })
-
+    db.collection('store1').where({
+      'name':_.eq(options.Shop)
+    })
+    .get({
+      success: function(res) {
+        // res.data 是包含以上定义的一条记录的数组
+        console.log("搜索成功",res.data)
+        that.setData({
+          img_src:res.data[0]['storeImg']//返回改菜品的_id（目前只能返回一个）
+        })
+      }
+    })
   },
   collect: function(){
     this.setData({
