@@ -8,7 +8,8 @@ Page({
   array:
   [ ]
   },
-  btnclick:function (e) {
+  btnclick:function (event) {
+    console.log(event.currentTarget.dataset.text)
     wx.navigateTo({
       url: '/pages/shop/shop'
     })
