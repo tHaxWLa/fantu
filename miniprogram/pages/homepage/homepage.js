@@ -146,7 +146,8 @@ Page({
   
   goSearch() { //去搜索页
     var that = this
-    wx.navigateTo({
+    if(that.data.searchKey)
+    {wx.navigateTo({
       url: '../search/search?searchKey=' + that.data.searchKey
     })
     db.collection('dish').where({
@@ -157,8 +158,15 @@ Page({
     // 输出 [{ "title": "The Catcher in the Rye", ... }]
     console.log('查询成功',res.data)
   }
-  })
-
+  })}
+  else
+  {
+    wx.showToast({
+      title: '输入不能为空!', // 标题
+      icon: 'none',  // 图标类型，默认success
+      duration: 1500  // 提示窗停留时间，默认1500ms
+    })
+  }
   },
 
 
