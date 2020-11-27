@@ -90,6 +90,7 @@
   margin-top: 0px;
 }
 page{
-  background-color: #F0FFF0;
-  
+  background-color:#FAFAD2;
+  height: 100%;
+  font-size: x-large;
 }

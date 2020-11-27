@@ -88,7 +88,11 @@ Page({
   onReachBottom: function () {
 
   },
-
+  goshop:function(){
+    wx.navigateTo({
+      url: '../../pages/shop/shop',
+    })
+  },
   /**
    * 用户点击右上角分享
    */

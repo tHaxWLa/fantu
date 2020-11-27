@@ -16,9 +16,9 @@
    
   ],
   "window": {
-    "backgroundColor": "#F0FFF0",
+    "backgroundColor": "#FDF5E6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#00F5FF",
+    "navigationBarBackgroundColor": "#EEEE00",
     "navigationBarTitleText": "饭图",
     "navigationBarTextStyle": "black"
   },

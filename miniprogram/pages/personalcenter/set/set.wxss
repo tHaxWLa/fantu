@@ -1,4 +1,7 @@
 
+page{
+  font-size: x-large;
+}
 .sbtn{
   border: 1px solid #f4c903;
   padding: 3rpx;
@@ -47,7 +50,6 @@ flex-direction: row;
 padding: 5px;
 
 }
-
 .head{
   position: fixed;
   top:0%;
@@ -56,6 +58,8 @@ padding: 5px;
   width: 100%;
   height: 50px;
   line-height: 50px;
+  font-family: cursive;
+  padding-left: 40rpx;
 }
 .head1{
   top:0%;

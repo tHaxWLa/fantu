@@ -1,7 +1,8 @@
+<view class="head">我的偏好设置</view>
+      <view class="head1"></view>
 <view class="body">
   <view class="page-section">
-      <view class="head">我的偏好设置</view>
-      <view class="head1"></view>
+      
       <view>
         <checkbox-group bindchange="checkboxChange" >
           <label class="body0" wx:for="{{liketags}}" wx:key="{{item.value}}" >
