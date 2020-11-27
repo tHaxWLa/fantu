@@ -90,7 +90,7 @@
   margin-top: 0px;
 }
 page{
-  background-color:#FAFAD2;
+  background-color:#FFD59F;
   height: 100%;
   font-size: x-large;
   font-family: cursive; 

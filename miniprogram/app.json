@@ -16,23 +16,18 @@
    
   ],
   "window": {
-    "backgroundColor": "#FDF5E6",
+    "backgroundColor": "#FFD59F",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#EEEE00",
+    "navigationBarBackgroundColor": "#FF7337",
     "navigationBarTitleText": "饭图",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#a9b7b7",
-    "selectedColor": "#f4ea2a",
+    "color": "black",
+    "selectedColor": "#FF7337",
     "borderStyle": "white",
     "list": [
-      {
-        "selectedIconPath": "images/menuicon/map1.png",
-        "iconPath": "images/menuicon/map.png",
-        "pagePath": "pages/allmap/allmap",
-        "text": "地图"
-      },
+  
       {
         "selectedIconPath": "images/menuicon/home1.png",
         "iconPath": "images/menuicon/home.png",
