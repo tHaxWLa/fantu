@@ -93,9 +93,10 @@ Page({
   onReachBottom: function () {
 
   },
-  goshop:function(){
+  goshop:function(event){
+    console.log("商店名",event.currentTarget.dataset.text)
     wx.navigateTo({
-      url: '../../pages/shop/shop',
+      url: '../../pages/shop/shop?Shop='+event.currentTarget.dataset.text,
     })
   },
   /**
