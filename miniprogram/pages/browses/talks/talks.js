@@ -14,7 +14,7 @@ Page({
     img_name:null,
     once_talk:null,
         talks: [
-          {
+          /*{
             avatarUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3474094557,370758738&fm=11&gp=0.jpg',
             nickName: '小',
             content:'为什么这么好吃呢?',
@@ -37,7 +37,7 @@ Page({
             nickName: '小4',
             content:'好',
             talkTime: '15分钟前'
-          },
+          },*/
         ],
   },
 

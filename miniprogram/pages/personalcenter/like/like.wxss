@@ -8,6 +8,10 @@
   width: 100%;
   flex-direction: row;
 }
+.delimg{
+  width: 50rpx;
+  height: 50rpx;
+}
 .list2 {
   padding-top: 1px;
   padding-right: 2px;

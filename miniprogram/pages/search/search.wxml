@@ -24,6 +24,7 @@
   </view>
   <view wx:if="{{ans.length==0}}">
     <view class="head1"> </view>
-    你想搜的这道菜暂时还搜不到哦！
+    <text class="tishi">你想搜的这道菜暂时还搜不到哦！</text>
+    
   </view>
  </scroll-view>

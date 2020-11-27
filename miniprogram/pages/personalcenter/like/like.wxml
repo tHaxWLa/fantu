@@ -13,7 +13,8 @@
       <text class="img_name">{{item.img_name}}</text>
     </view>
    <view style="position:absolute;right:0px;width:60px;height:110px" >
-    <button bindtap='dellove'  data-index='{{item.img_name}}'style="position:absolute;top:30px;font-size:12px; right:0px; width: 80px;height:25px;">删除</button>
+     <image bindtap='dellove'  data-index='{{item.img_name}}' src="../../../images/search/del.png" class="delimg" style="position:absolute;top:36%; right:20%;"></image>
+    
    </view>
   </view>
 

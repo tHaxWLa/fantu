@@ -18,6 +18,12 @@
   border-radius: 30rpx;
 }
 
+.tishi
+{
+  font-size: x-large;
+  padding-left: 5%;
+  
+}
 .searchImg {
   width: 70rpx;
   height: 70rpx;
