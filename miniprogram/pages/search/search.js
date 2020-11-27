@@ -28,6 +28,11 @@ Page({
         SearchKey:options.searchKey,
       })
     }
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading',
+      duration: 1000
+    })
     db.collection('dish').where({
       'img_name':
       {
@@ -102,11 +107,6 @@ Page({
   },
 
   goSearch(event) { //去搜索页
-    wx.showToast({
-      title: '搜索',
-      icon:'none',
-      duration:1000
-     })
      db.collection('dish').where({
       'img_name':
       {
@@ -125,6 +125,11 @@ Page({
       
     })
     var that = this
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading',
+      duration: 1000
+    })
     this.onLoad
   },
 })
