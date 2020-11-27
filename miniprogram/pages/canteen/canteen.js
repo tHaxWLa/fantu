@@ -6,8 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-  array:
-  [ ]
+  array1:[],
+  array0:[],
+  array:[],
   },
 
   btnclick:function (event) {
@@ -20,14 +21,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (event) {
+    var that=this
     highlight=event.highlight
     console.log('高亮：',highlight)
+
     db.collection('store1').get().then(res => {
       this.setData({
-        array:res.data
+        array1:res.data
       })
-    console.log(res.data)
-})
+      console.log('第一次获取店铺：',res.data)
+
+        db.collection('store1').skip(20).get().then(res => { 
+          that.setData({
+            array0:res.data
+          })
+          console.log('第二次获取店铺：',res.data)
+          that.data.array=that.data.array1.concat(that.data.array0)     
+          that.setData({
+            array:that.data.array
+          })       
+          console.log('获取所有店铺：',that.data.array)
+        })
+
+
+    })
+
+
 
   },
 
