@@ -1,20 +1,14 @@
 // miniprogram/pages/browses/browses.js
 const db=wx.cloud.database();
+var lists=[];
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    click: false, //是否显示弹窗内容
-    option: false, //显示弹窗或关闭弹窗的操作动画
     touchStart: 0,
     inputValue: '',
-    inputBiaoqing: '',
-
-
-   video_list:[
-/*shopname:"店铺名*/
-   ],
+   video_list:[],
    pageY:'',    // 触摸起始高度坐标
    animation:'',  // 视频划动动画
    up_stroke:false,// ture:上划；false：下划
@@ -41,13 +35,14 @@ Page({
     })
     
     },
+
   zan: function (e) {
     const vm = this;
     const that = this;
     const _index = e.currentTarget.dataset.index; 
     let _msg = [...vm.data.video_list]; // msg的引用 
     _msg[_index]['show1'] = !vm.data.video_list[_index]['show1'];
-    console.log("点赞",_index)
+    console.log("序号：",_index)
 
     if(vm.data.video_list[_index]['show1'])
     {
@@ -100,7 +95,6 @@ Page({
           },
           fail: console.error
         })
-
         db.collection(getApp().globalData.useropenid).add({
           // data 字段表示需新增的 JSON 数据
           data: {  
@@ -228,50 +222,21 @@ Page({
     })
    },
 
-jmp_go: function(e) {
-  const vm = this;
-  const that = this;
-  const _index = e.currentTarget.dataset.index; 
-  let _msg = [...vm.data.video_list]; // msg的引用 
-  wx.showToast({
-    title: '前往商家页面',
-    icon:'none',
-    duration:1000
-   })
- wx.navigateTo({
-   url: '/pages/shop/shop?Shop='+_msg[_index]['store']
- })
-
-},
- 
-  // 用户点击显示弹窗
-  clickPup: function() {
-    let _that = this;
-    if (!_that.data.click) {
-      _that.setData({
-        click: true,
-      })
-    }
- 
-    if (_that.data.option) {
-      _that.setData({
-        option: false,
-      })
- 
-      // 关闭显示弹窗动画的内容，不设置的话会出现：点击任何地方都会出现弹窗，就不是指定位置点击出现弹窗了
-      setTimeout(() => {
-        _that.setData({
-          click: false,
-        })
-      }, 500)
- 
- 
-    } else {
-      _that.setData({
-        option: true
-      })
-    }
+  jmp_go: function(e) {
+    const vm = this;
+    const that = this;
+    const _index = e.currentTarget.dataset.index; 
+    let _msg = [...vm.data.video_list]; // msg的引用 
+    wx.showToast({
+      title: '前往商家页面',
+      icon:'none',
+      duration:1000
+    })
+  wx.navigateTo({
+    url: '/pages/shop/shop?Shop='+_msg[_index]['store']
+  })
   },
+ 
  
 
   /**
@@ -284,11 +249,12 @@ jmp_go: function(e) {
    db.collection('dish').aggregate().sample({
      size: 20
    }).end().then(res => {
+    lists = res.list
     this.setData({
-      video_list:res.list
+      video_list:lists
       }
     )
-    console.log('本次菜单列表：',res.list)
+    console.log('首次菜单列表：',res.list)
   })
 
 
@@ -401,15 +367,31 @@ jmp_go: function(e) {
    // 判断是否到底
    is_continue(n,difference){
     if(difference < 0){ // 上划
+      
      if(n == this.data.video_list.length - 1){ // 最后一个视频，提示到底
-      if(difference < -20){
-       wx.showToast({
-        title: '已经到底了~~',
-        icon:'none',
-        duration:1000
+
+        if(difference < -20){
+        wx.showToast({
+          title: '刷新---',
+          icon:'none',
+          duration:1000
+        })
+        }
+
+        db.collection('dish').aggregate().sample({
+          size: 1
+        }).end().then(res => {
+         lists.push(res.list[0])
+         console.log("现在菜单",lists)
+         this.setData({
+           video_list:lists
+           }
+         )
        })
-      }
+ 
+
       return true;
+      
      }
     }else{
      if(n == 0){
