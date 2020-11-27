@@ -20,30 +20,30 @@
   <view class="category-panel2">
    
     <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../images/homepage/canting1.png" />
+      <image class="category-item-image" src="../../images/homepage/fan.png" />
       <text class="category-item-text">玫瑰园</text>
     </view>
     <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../images/homepage/canting1.png" />
+      <image class="category-item-image" src="../../images/homepage/fan1.png" />
       <text class="category-item-text">玫瑰园二楼</text>
     </view>
     <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../images/homepage/canting1.png" />
+      <image class="category-item-image" src="../../images/homepage/fan2.png" />
       <text class="category-item-text">紫荆园</text>
     </view>
   </view>
 
   <view class="category-panel2">
     <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../images/homepage/canting1.png" />
+      <image class="category-item-image" src="../../images/homepage/fan3.png" />
       <text class="category-item-text">朝阳</text>
     </view>
     <view bindtap='btnclick2' class="category-item">
-      <image class="category-item-image" src="../../images/homepage/canting1.png" />
+      <image class="category-item-image" src="../../images/homepage/fan4.png" />
       <text class="category-item-text">京元</text>
     </view>
     <view bindtap='more' class="category-item">
-      <image class="category-item-image" src="../../images/homepage/others.png" />
+      <image class="category-item-image" src="../../images/homepage/fan5.png" />
       <text class="category-item-text">其他餐厅</text>
     </view>
   </view>
