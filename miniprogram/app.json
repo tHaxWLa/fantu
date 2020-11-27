@@ -27,12 +27,7 @@
     "selectedColor": "#f4ea2a",
     "borderStyle": "white",
     "list": [
-      {
-        "selectedIconPath": "images/menuicon/map1.png",
-        "iconPath": "images/menuicon/map.png",
-        "pagePath": "pages/allmap/allmap",
-        "text": "地图"
-      },
+   
       {
         "selectedIconPath": "images/menuicon/home1.png",
         "iconPath": "images/menuicon/home.png",
