@@ -89,7 +89,7 @@ Page({
   },
 
   dellove:function(e){
-    var _this=this;
+    
     const delname = e.currentTarget.dataset.index; 
     console.log('要删除的菜：',delname)
     db.collection(getApp().globalData.useropenid).where({
@@ -103,7 +103,7 @@ Page({
   
         }
       })
-    this.onLoad()
+      this.onReady()
 
 
 
