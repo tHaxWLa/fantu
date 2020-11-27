@@ -37,7 +37,7 @@
   <view class="category-panel2">
     <view bindtap='btnclick2' class="category-item">
       <image class="category-item-image" src="../../images/homepage/fan3.png" />
-      <text class="category-item-text">朝阳</text>
+      <text class="category-item-text">紫荆园二楼</text>
     </view>
     <view bindtap='btnclick2' class="category-item">
       <image class="category-item-image" src="../../images/homepage/fan4.png" />

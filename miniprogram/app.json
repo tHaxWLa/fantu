@@ -16,7 +16,7 @@
    
   ],
   "window": {
-    "backgroundColor": "#FFD59F",
+    "backgroundColor": "#FFE2C8",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FF7337",
     "navigationBarTitleText": "饭图",
@@ -29,20 +29,20 @@
     "list": [
   
       {
-        "selectedIconPath": "images/menuicon/home1.png",
-        "iconPath": "images/menuicon/home.png",
+        "selectedIconPath": "images/menuicon/home3.png",
+        "iconPath": "images/menuicon/home2.png",
         "pagePath": "pages/homepage/homepage",
         "text": "首页"
       },
       {
-        "selectedIconPath": "images/menuicon/browses1.png",
-        "iconPath": "images/menuicon/browses.png",
+        "selectedIconPath": "images/menuicon/ct1.png",
+        "iconPath": "images/menuicon/ct.png",
         "pagePath": "pages/browses/browses",
         "text": "推荐"
       },
       {
-        "selectedIconPath": "images/menuicon/user1.png",
-        "iconPath": "images/menuicon/user.png",
+        "selectedIconPath": "images/menuicon/user3.png",
+        "iconPath": "images/menuicon/user2.png",
         "pagePath": "pages/personalcenter/personalcenter",
         "text": "个人中心"
       }
