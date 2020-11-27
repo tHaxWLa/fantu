@@ -6,7 +6,7 @@
   height: 40rpx;
 }
 .searchRoot {
-  background: rgb(255, 255, 255);
+  background: #FAFAD2;
   padding: 20rpx;
   display: flex;
   flex-direction: row;
