@@ -1,4 +1,5 @@
 // miniprogram/pages/personalcenter/like/like.js
+const db=wx.cloud.database();
 Page({
 
   /**
@@ -85,5 +86,27 @@ Page({
     wx.navigateTo({
       url: '../../shop/shop',
     })
+  },
+
+  dellove:function(e){
+    
+    const delname = e.currentTarget.dataset.index; 
+    console.log('要删除的菜：',delname)
+    db.collection(getApp().globalData.useropenid).where({
+      img_name:delname
+     }).remove({
+        success: function(res) {
+          wx.showToast({
+            title: "删除成功"
+          })
+          console.log('取消收藏 调用返回信息：',res)
+  
+        }
+      })
+      this.onReady()
+
+
+
+
   }
 })
