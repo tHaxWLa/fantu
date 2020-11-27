@@ -1,5 +1,10 @@
-<view>
+<view wx:if="{{img_src.length>0}}">
   <image src="{{img_src}}" class="slide-image" />
+</view>
+<view wx:else>
+  <text>
+    图片尚未获取
+  </text>
 </view>
 <view class="goods_infor_top">
   <view class="goods_title">
@@ -20,6 +25,7 @@
 
 
 <scroll-view  scroll-y="true" bindscrolltolower="onScrollLoad"> 
+<view wx:if="{{goods.length>0}}"> 
 <view  wx:for="{{goods}}" wx:key="*this">
 
   <view class="goodslist">
@@ -31,6 +37,13 @@
   
 </view>
 
+</view>
+
+</view>
+<view wx:else>
+<text>
+  商品详情尚未获取
+</text>
 </view>
   </scroll-view>
 
