@@ -114,7 +114,11 @@ gotocanteen:function(event){
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    wx.showToast({
+      title: '更多菜品还请实地考察',
+      icon:'none',
+      duration:2000
+     })
   },
 
   /**
