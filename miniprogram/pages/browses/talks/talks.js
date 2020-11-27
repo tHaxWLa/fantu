@@ -61,7 +61,7 @@ Page({
         // res.data 是包含以上定义的一条记录的数组
         console.log("搜索成功",res.data)
         that.setData({
-          talks:res.data[0]['talks'],//返回改菜品的_id（目前只能返回一个）
+          talks:res.data[0]['talks'],//返回改菜品的_id
           id:res.data[0]['_id']
         })
       }
@@ -172,7 +172,9 @@ Page({
         console.log("传入数据成功",res)
       }
     })
-    
+    this.setData({
+      inputValue:''
+    })
    }
    
    
