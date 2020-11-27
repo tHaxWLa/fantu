@@ -29,18 +29,26 @@ Page({
      delay: 0 // 动画延迟参数
     })
     },
-    showTalks: function() {
+
+    showTalks: function(e) {
+      const vm = this;
+      const that = this;
+      const _index = e.currentTarget.dataset.index; 
+      let _msg = [...vm.data.video_list]; // msg的引用 
+      console.log(_msg[_index]['img_name']) ;
     wx.navigateTo({
-      url: '../../pages/browses/talks/talks',
+      url: '../../pages/browses/talks/talks?img_name='+_msg[_index]['img_name'],
     })
-    },
     
+    },
   zan: function (e) {
     const vm = this;
     const that = this;
     const _index = e.currentTarget.dataset.index; 
     let _msg = [...vm.data.video_list]; // msg的引用 
     _msg[_index]['show1'] = !vm.data.video_list[_index]['show1'];
+    console.log("点赞",_index)
+
     if(vm.data.video_list[_index]['show1'])
     {
       wx.showToast({

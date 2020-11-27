@@ -1,5 +1,8 @@
 // miniprogram/pages/browses/talks/talks.js
 var util = require('../../utils/util.js');
+const app = getApp()
+const db=wx.cloud.database();
+const _=db.command
 Page({
 
   /**
@@ -7,6 +10,7 @@ Page({
    */
   data: {
     inputValue: '',
+    img_name:null,
         talks: [
           {
             avatarUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3474094557,370758738&fm=11&gp=0.jpg',
@@ -39,6 +43,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
+    if(options.img_name)
+    {
+      console.log('result',options.img_name)
+      that.setData({
+        img_name:options.img_name,
+      })
+    }
+    db.collection('dish').where({
+      'img_name':_.eq(that.data.img_name)
+    })
+    .get({
+      success: function(res) {
+        // res.data 是包含以上定义的一条记录的数组
+        console.log("搜索成功",res.data)
+        that.setData({
+          talks:res.data[0]['talks']//返回改菜品的_id（目前只能返回一个）
+        })
+      }
+    })
 
   },
 
@@ -116,8 +140,8 @@ Page({
     var time = util.formatTime(new Date());
     let temp=that.data.talks;  
     temp.unshift({
-     avatarUrl: 'https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2070453827,1163403148&fm=26&gp=0.jpg',
-     nickName: '饭饭',
+     avatarUrl: getApp().globalData.userInfo.avatarUrl,
+     nickName: getApp().globalData.userInfo.nickName,
      content: this.data.inputValue,
      talkTime: time,
     })

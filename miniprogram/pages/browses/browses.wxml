@@ -12,7 +12,7 @@
     <image class='img2' hidden='{{!item.show2}}' bindtap='cai' data-index='{{index}}' src='../../images/menuicon/cai.png'></image>
     <text class='cainums'>{{item.cainum}}</text>
     <image class="img3" src="../../images/menuicon/go1.png" bindtap='jmp_go'></image>
-    <image class="img4" src="../../images/menuicon/discuss.png" catchtap='showTalks'></image>
+    <image class="img4" src="../../images/menuicon/discuss.png" data-index='{{index}}' catchtap='showTalks'></image>
     <text class="text3">{{item.img_tex2}}</text>
  </view>
 
