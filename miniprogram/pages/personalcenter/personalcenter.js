@@ -12,6 +12,8 @@ Page({
   },
   
   onGotUserInfo: function (e) {
+    var that=this
+
     if (e.detail.userInfo) {
       var user = e.detail.userInfo;
       this.setData({
@@ -26,20 +28,24 @@ Page({
         },
         success: function (res) {
           {
-            console.log(res.result.openid)
-            console.log('登陆 获取openid调用成功')
-            db.collection('usertable').where({'useropenid':res.result.openid}).update({
-              // data 传入需要局部更新的数据
-              data: {
-                useropenid:res.result.openid,
-                username:user.nickName,
-                userimg:user.avatarUrl
-                // 表示将 done 字段置为 true
-              },
-              success: function(res) {
-                console.log(res)
-              }
-            })
+            //由于只能云端更新用户表 故放弃 由于一开始就获取了权限 不影响使用
+            /*  db.collection('usertable').where
+              ({
+                useropenid:res.result.openid
+              }).update({
+                // data 传入需要局部更新的数据
+                data: {
+                  useropenid:user.openid,
+                  username:user.nickName,
+                  userimg:user.avatarUrl
+                },
+                success: function(res) {
+                  console.log(res,"重新set数据库用户信息完成")
+                }
+              }) */
+          console.log('openid：', res.result.openid)
+          console.log('登陆 获取openid调用成功')
+           
           }},
         fail: console.error
       })

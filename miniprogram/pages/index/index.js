@@ -1,23 +1,24 @@
 // miniprogram/pages/index/index.js
 var app=getApp();     // 取得全局App
-Page({
 
-  /**
-   * 页面的初始数据
-   */
+Page({
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     isHide: false
 
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     var that = this;
+    wx.cloud.callFunction({
+        name: 'getopenid',
+        complete: res => {
+          app.globalData.useropenid = res.result.openid
+          console.log("全局变量内的用户openid：",getApp().globalData.useropenid)
+          
+        }
+      })
     // 查看是否授权
-    console.log("全局用户信息：",getApp().globalData.userInfo)
     wx.getSetting({
         success: function(res) {
             if (res.authSetting['scope.userInfo']) {
@@ -25,7 +26,7 @@ Page({
                     success: function(res) {
                       app.globalData.userInfo = res.userInfo
                       console.log("已经授权过")
-                      console.log(getApp().globalData.userInfo)
+                      console.log("全局变量内的用户信息：",getApp().globalData.userInfo)
                       wx.switchTab({
                         url: '../homepage/homepage',
                       })
@@ -115,10 +116,9 @@ Page({
         //用户按了允许授权按钮
         var that = this;
         // 获取到用户的信息了，打印到控制台上看下
-        console.log("用户的信息如下：");
-        console.log(e.detail.userInfo);
         app.globalData.userInfo = e.detail.userInfo
-        console.log("全局用户信息：",getApp().globalData.userInfo)
+        console.log("全局变量内的用户信息：",getApp().globalData.userInfo)
+        console.log("全局变量内的用户openid：",getApp().globalData.useropenid)
         //授权成功后,通过改变 isHide 的值，让实现页面显示出来，把授权页面隐藏起来
         that.setData({
             isHide: false

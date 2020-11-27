@@ -23,31 +23,7 @@ Page({
     duration: 1200,
     iscollect: true,
     goods:[
-      {
-          goodsname:"菜名",
-          goodsprice:5,
-          goodssrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
-      },
-      {
-        goodsname:"菜名1",
-        goodsprice:6,
-        goodssrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
-    },
-    {
-      goodsname:"菜名2",
-      goodsprice:7,
-      goodssrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
-  },
-  {
-    goodsname:"菜名2",
-    goodsprice:7,
-    goodssrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
-},
-  {
-    goodsname:"菜名2",
-    goodsprice:7,
-    goodssrc:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1066721984,714626582&fm=26&gp=0.jpg'
-  },
+     
     ]
   },
   gotocanteen:function(){

@@ -61,6 +61,15 @@ Page({
             },
             fail: console.error
          })
+
+         db.collection(getApp().globalData.useropenid).where({
+          img_name:_msg[_index]['img_name']
+         }).remove({
+            success: function(res) {
+              console.log('取消收藏 调用返回信息：',res)
+
+            }
+          })
     }
     else
     {
@@ -82,6 +91,27 @@ Page({
             }
           },
           fail: console.error
+        })
+
+        db.collection(getApp().globalData.useropenid).add({
+          // data 字段表示需新增的 JSON 数据
+          data: {  
+              show2:true,
+              store:_msg[_index]['store'],
+              talknum:_msg[_index]['talknum'],
+              cainum:_msg[_index]['cainum'],
+              img_name:_msg[_index]['img_name'],
+              img_src:_msg[_index]['img_src'],
+              img_tex2:_msg[_index]['img_tex2'],
+              talks:_msg[_index]['talks'],
+              zannum:_msg[_index]['zannum'],
+              img_dislike:"../../images/menuicon/cai.png",
+              img_like:"../../images/menuicon/xin1.png",
+              img_tex1:_msg[_index]['tex1'],
+              show1:true
+          }
+        }).then(res => {
+          console.log('收藏成功,调用返回信息:',res)
         })
 
        if(!vm.data.video_list[_index]['show2'])//点赞后 如果有踩则取消踩 踩数量-1
@@ -173,6 +203,15 @@ Page({
             }
           },fail: console.error
         })
+
+        db.collection(getApp().globalData.useropenid).where({
+          img_name:_msg[_index]['img_name']
+         }).remove({
+            success: function(res) {
+              console.log('从数据库移除收藏 调用信息：',res)
+
+            }
+          })
        }
 
     }
@@ -226,9 +265,9 @@ jmp_go: function() {
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-this.setData({
-    windowHeight:wx.getSystemInfoSync().windowHeight
-   })
+    this.setData({
+        windowHeight:wx.getSystemInfoSync().windowHeight
+      })
    db.collection('dish').aggregate().sample({
      size: 20
    }).end().then(res => {
@@ -236,7 +275,7 @@ this.setData({
       video_list:res.list
       }
     )
-    console.log(res.list)
+    console.log('本次菜单列表：',res.list)
   })
 
 
