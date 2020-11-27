@@ -33,6 +33,14 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  nodev:function()
+  {
+    wx.showToast({
+      title: '数据还未集全,敬请期待!',
+      icon:'none',
+      duration:1000
+     })
+  },
   onLoad: function (options) {
 
     this.setData({
