@@ -17,7 +17,8 @@ App({
 
     this.globalData = {
       userInfo:[], 
-      useropenid:''
+      useropenid:'',
+      windowHeight:0,
     }
   }
 })

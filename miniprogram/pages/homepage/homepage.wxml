@@ -1,4 +1,5 @@
-<view class="head"></view>
+<view  style='height:{{ windowHeight}}'>
+  <view class="head"></view>
 <view>
   <swiper indicator-dots="{{true}}" indicator-color="#f4c903" autoplay="true" circular="true">
     <block wx:for="{{banner}}" wx:key="banner">
@@ -47,4 +48,5 @@
       <text class="category-item-text">其他餐厅</text>
     </view>
   </view>
+</view>
 </view>

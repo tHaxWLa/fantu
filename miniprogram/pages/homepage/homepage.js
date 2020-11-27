@@ -15,6 +15,8 @@ Page({
     searchResult:null,
     nickName:'', 
     avatarUrl:'',
+    windowHeight:'',
+    windowHeight2:'',
     banner: [
       {
         picUrl:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1532844980,1238263623&fm=26&gp=0.jpg'
@@ -32,6 +34,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    this.setData({
+      windowHeight2:wx.getSystemInfoSync().windowHeight
+    })
+    var high=this.data.windowHeight2
+    console.log("屏幕高度2:"+high)
+
     var _this=this
     wx.getUserInfo({
       success: function(res) {
@@ -65,6 +74,12 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    wx.getSystemInfo({
+      success(res) {
+       windowHeight:res.windowHeight
+       console.log("屏幕高度:"+res.windowHeight)
+      }
+    });
 
   },
 
