@@ -36,7 +36,7 @@ Page({
   nodev:function()
   {
     wx.showToast({
-      title: '数据还未集全,敬请期待!',
+      title: '数据还未集全,功能未开放,敬请期待!',
       icon:'none',
       duration:1000
      })
