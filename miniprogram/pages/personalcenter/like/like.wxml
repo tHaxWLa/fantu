@@ -9,12 +9,17 @@
   <view class="goodslist">
     <image src='{{item.img_src}}' class="goodslistmsg"></image>
     <view class="list2">
-      <text class="goodsp" style='font-size:12px'>{{item.store}}</text>
+      <text class="goodsp" style='font-size:11px'>{{item.store}}</text>
+      <view>-----------------</view>
       <text class="img_name">{{item.img_name}}</text>
     </view>
+<<<<<<< HEAD
    <view style="padding-top:80rpx;padding-right:0rpx:width:100%" >
     <button bindtap='dellove'  data-index='{{item.img_name}}'style="position:relative;font-size:13px;  right:0px; width: 100px;height:25px;">删除</button>
    </view>
+=======
+    <button bindtap='dellove'  data-index='{{item.img_name}}'style="position:relative;font-size:12px; bottom:0px; right:0px; width: 60px;height:25px;" class="delbutton">删除</button>
+>>>>>>> 84abe2ca8a3ec54277f30b7835496bb074924947
   </view>
 
 </view>

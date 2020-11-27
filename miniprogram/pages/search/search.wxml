@@ -7,6 +7,7 @@
 
 
 <scroll-view  scroll-y="true" bindscrolltolower="onScrollLoad"> 
+  <view wx:if="{{ans.length>0}}">
   <view  wx:for="{{ans}}" wx:key="*this">
       <view class="goodslist">
         <image src='{{item.img_src}}' class="goodslistmsg"></image>
@@ -15,5 +16,10 @@
           <text class="goodsname">{{item.img_name}}</text>
       </view>
    </view>
+  </view>
+  </view>
+  <view wx:if="{{ans.length==0}}">
+    <view class="head1"> </view>
+    你想搜的这道菜暂时还搜不到哦！
   </view>
  </scroll-view>
