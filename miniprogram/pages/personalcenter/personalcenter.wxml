@@ -7,8 +7,8 @@
 </view>
 
 <view class='b1 float color' wx:if="{{isShowUserName}}">
-    <view class='userinfo-avatar' style="background-image: url({{userInfo.avatarUrl}})"></view>
-    <text class='name'>{{userInfo.nickName}}</text>
+    <view class='userinfo-avatar' style="background-image: url({{avatarUrl}})"></view>
+    <text class='name'>{{nickName}}</text>
 </view>
 
 <view wx:if="{{!isShowUserName}}">

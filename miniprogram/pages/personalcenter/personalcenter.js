@@ -7,8 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isShowUserName: false,
-    userInfo: null,
+    isShowUserName: true,
+    avatarUrl: '',
+    nickName: '',
   },
   
   onGotUserInfo: function (e) {
@@ -111,7 +112,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      avatarUrl: getApp().globalData.userInfo.avatarUrl,
+      nickName: getApp().globalData.userInfo.nickName,
+    })
   },
 
   /**
