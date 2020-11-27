@@ -10,7 +10,7 @@
 }
 .list2 {
   padding-top: 1px;
-  padding-right: 2px;
+  padding-left: 10%;
   padding-bottom: 2px;
   display: flex;
   /*row 横向  column 列表  */
@@ -41,7 +41,15 @@ padding-top: 15px;
   display:flex;
 align-items:center;
 justify-content:center;
-padding-top: 20px;
+padding-top: 35%;
+color: #EE9A00;
+}
+.img_name1{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding-top: 10%;
+  color: #EE9A00;
 }
 .delbutton
 {
