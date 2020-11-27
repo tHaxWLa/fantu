@@ -30,7 +30,8 @@ page{
 .float{ 
   float:left;
 }
-.backtome{         
+.backtome{
+         
   bottom: 10rpx;         
   background-color: rgb(255, 255, 255);
   position: fixed;    
