@@ -4,7 +4,9 @@
 </view>
 <view class="store">
     <view class="store_each" wx:for="{{array}}" wx:for-item="item">
-        <text bindtap="btnclick" data-text="{{item.name}}" style='writing-mode:vertical-lr;position:fixed; width: {{item.width*2.34}} rpx;height: {{item.height*2.34}}rpx;left:{{item.locationx*2.34}}rpx;top:{{item.locationy*2.34}}rpx;font-size:10px;'>{{item.name}}</text> 
+      <text wx:if="{{highlight==item.name}}" bindtap="btnclick" data-text="{{item.name}}" style='writing-mode:vertical-lr;position:fixed; width: {{item.width*2.34}} rpx;height: {{item.height*2.34}}rpx;left:{{item.locationx*2.34}}rpx;top:{{item.locationy*2.34}}rpx;font-size:10px;color:red;background-color:yellow; '>{{highlight}}</text>   
+      <text wx:else bindtap="btnclick" data-text="{{item.name}}" style='writing-mode:vertical-lr;position:fixed; width: {{item.width*2.34}} rpx;height: {{item.height*2.34}}rpx;left:{{item.locationx*2.34}}rpx;top:{{item.locationy*2.34}}rpx;font-size:10px;'>{{item.name}}</text> 
+
     </view>
     
 </view>

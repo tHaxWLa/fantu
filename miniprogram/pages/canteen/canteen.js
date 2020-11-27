@@ -1,6 +1,5 @@
 // pages/Restaurant1/Restaurant1.js
 const db=wx.cloud.database();
-var highlight=''
 Page({
   /**
    * 页面的初始数据
@@ -9,10 +8,11 @@ Page({
   array1:[],
   array0:[],
   array:[],
+  highlight:'',
   },
 
   btnclick:function (event) {
-    console.log('传参:',event.currentTarget.dataset.text)
+    console.log('传参给shop页点击的商店名字:',event.currentTarget.dataset.text)
     wx.navigateTo({
       url: '/pages/shop/shop?Shop='+event.currentTarget.dataset.text
     })
@@ -22,15 +22,11 @@ Page({
    */
   onLoad: function (event) {
     var that=this
-    highlight=event.highlight
-    console.log('高亮：',highlight)
-
     db.collection('store1').get().then(res => {
       this.setData({
         array1:res.data
       })
-      console.log('第一次获取店铺：',res.data)
-
+        console.log('第一次获取店铺：',res.data)
         db.collection('store1').skip(20).get().then(res => { 
           that.setData({
             array0:res.data
@@ -42,11 +38,12 @@ Page({
           })       
           console.log('获取所有店铺：',that.data.array)
         })
-
-
     })
 
-
+    this.setData({
+      highlight:event.highlight//返回改菜品的_id（目前只能返回一个）
+    })
+    console.log('高亮：',this.data.highlight)
 
   },
 
