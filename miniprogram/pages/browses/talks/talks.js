@@ -10,7 +10,9 @@ Page({
    */
   data: {
     inputValue: '',
+    id:null,
     img_name:null,
+    once_talk:null,
         talks: [
           {
             avatarUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3474094557,370758738&fm=11&gp=0.jpg',
@@ -59,7 +61,8 @@ Page({
         // res.data 是包含以上定义的一条记录的数组
         console.log("搜索成功",res.data)
         that.setData({
-          talks:res.data[0]['talks']//返回改菜品的_id（目前只能返回一个）
+          talks:res.data[0]['talks'],//返回改菜品的_id（目前只能返回一个）
+          id:res.data[0]['_id']
         })
       }
     })
@@ -145,6 +148,14 @@ Page({
      content: this.data.inputValue,
      talkTime: time,
     })
+    this.setData({
+      once_talk:{
+      avatarUrl: getApp().globalData.userInfo.avatarUrl,
+      nickName: getApp().globalData.userInfo.nickName,
+      content: this.data.inputValue,
+      talkTime: time}
+    })
+    console.log(this.data.once_talk)
    if(that.data.inputValue != ''||that.data.inputValue!=null)
    {
       that.data.inputValue = '';
@@ -153,6 +164,16 @@ Page({
      talks: temp,
      inputValue: that.data.inputValue,
     })
+
+    db.collection('dish').doc(this.data.id).update({
+      data: {
+        talks: _.push(this.data.once_talk)
+      },
+      success: function(res) {
+        console.log("传入数据成功",res)
+      }
+    })
+    
    }
    
    
