@@ -13,6 +13,7 @@
   
   
   padding-left: 30rpx;
+  padding-bottom: 10rpx;
   border: 1px solid #f4c903;
   border-radius: 30rpx;
 }

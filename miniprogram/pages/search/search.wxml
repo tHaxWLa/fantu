@@ -1,7 +1,11 @@
-<view class="searchRoot head">
+
+<view class=" head">
+  <view class="searchRoot">
   <input class="searchInput" bindinput="getSearchKey" placeholder="{{SearchKey}}"></input>
   <image class="searchImg" bindtap="goSearch" src="../../images/homepage/search.png"></image>
 </view>
+</view>
+<view class="head1"> </view>
 <view class="head1"> </view>
 
 
