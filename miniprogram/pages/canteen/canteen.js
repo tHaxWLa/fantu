@@ -1,5 +1,6 @@
 // pages/Restaurant1/Restaurant1.js
 const db=wx.cloud.database();
+var highlight=''
 Page({
   /**
    * 页面的初始数据
@@ -10,7 +11,7 @@ Page({
   },
 
   btnclick:function (event) {
-    console.log(event.currentTarget.dataset.text)
+    console.log('传参:',event.currentTarget.dataset.text)
     wx.navigateTo({
       url: '/pages/shop/shop?Shop='+event.currentTarget.dataset.text
     })
@@ -18,13 +19,16 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (event) {
+    highlight=event.highlight
+    console.log('高亮：',highlight)
     db.collection('store1').get().then(res => {
       this.setData({
         array:res.data
       })
-      console.log(res.data)
+    console.log(res.data)
 })
+
   },
 
   /**

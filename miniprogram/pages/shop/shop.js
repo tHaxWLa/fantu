@@ -26,10 +26,11 @@ Page({
      
     ]
   },
-  gotocanteen:function(){
-wx.navigateTo({
-  url: '../../pages/canteen/canteen',
-})
+gotocanteen:function(event){
+  console.log('传参到餐厅页面的参数:',event.currentTarget.dataset.text)
+  wx.navigateTo({
+      url: '../../pages/canteen/canteen?highlight='+event.currentTarget.dataset.text
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -38,7 +39,7 @@ wx.navigateTo({
     var that = this
     if(options.Shop)
     {
-      console.log('Shop',options.Shop)
+      console.log('获取shop参数:',options.Shop)
       that.setData({
         shopname:options.Shop,
       })
