@@ -1,5 +1,8 @@
-<view class='talk-header'> 
+<view  wx :if="{{talks.length>0}}" class='talk-header'> 
 <view class='talk-count'>{{talks.length}} 条评论</view> 
+</view>
+<view  wx :if="{{talks.length==0}}" class='talk-header'> 
+  <view class='talk-count'>{{talks.length}} 条评论</view> 
 </view>
 <scroll-view class='talk-body' scroll-y="true"  bindscrolltolower="onScrollLoad"> 
 <view class='talk-item' wx:for="{{talks}}" wx:key="*this"> 

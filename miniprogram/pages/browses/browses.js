@@ -228,15 +228,20 @@ Page({
     })
    },
 
-jmp_go: function() {
+jmp_go: function(e) {
+  const vm = this;
+  const that = this;
+  const _index = e.currentTarget.dataset.index; 
+  let _msg = [...vm.data.video_list]; // msg的引用 
   wx.showToast({
     title: '前往商家页面',
     icon:'none',
     duration:1000
    })
-  wx.navigateTo({
-    url: '../shop/shop'
-  })
+ wx.navigateTo({
+   url: '/pages/shop/shop?Shop='+_msg[_index]['store']
+ })
+
 },
  
   // 用户点击显示弹窗
