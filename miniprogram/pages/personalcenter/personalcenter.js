@@ -145,6 +145,13 @@ Page({
       avatarUrl: getApp().globalData.userInfo.avatarUrl,
       nickName: getApp().globalData.userInfo.nickName,
     })
+    console.log(this.data.nickName)
+    if(this.data.nickName.length != 0){
+      console.log("人物信息已经获取 直接显示")
+      this.setData({
+        isShowUserName:true,
+      })
+    }
   },
 
   /**
