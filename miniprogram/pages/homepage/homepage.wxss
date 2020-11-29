@@ -29,7 +29,7 @@
 }
 
 .category-panel1 {
-  height: 500rpx;
+  height: 45vh;
   width: auto;
   display: flex;
   color: #666;
@@ -45,31 +45,24 @@
   display: flex;
   color: #666;
   flex-direction: row;
-  font-size: 20rpx;
   justify-content: space-around;
   align-items: center;
 }
 
 .category-item {
   display: flex;
-  width: 200rpx;
+  width: 25vw;
   text-align: center;
   flex-direction: column;
 }
 
 .category-item-image {
-  width: 120rpx;
-  height: 120rpx;
+  width: 20vw;
+  height: 20vw;
   padding: 10rpx;
   align-self: center;
 }
 
-.category-item-image1 {
-  width: 50rpx;
-  height: 45rpx;
-  overflow: unset;
-  padding: 15rpx 12rpx 0 6rpx;
-}
 
 .kf_button {
   background-color: rgba(255, 255, 255, 0);
