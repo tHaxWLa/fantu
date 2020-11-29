@@ -45,6 +45,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
     var that = this
     if(options.img_name)
     {
@@ -139,45 +140,50 @@ Page({
         //点击发布，发布评论
        
   fabu: function (e) {
-    const that = this;
-    var time = util.formatTime(new Date());
-    let temp=that.data.talks;  
-    temp.unshift({
-     avatarUrl: getApp().globalData.userInfo.avatarUrl,
-     nickName: getApp().globalData.userInfo.nickName,
-     content: this.data.inputValue,
-     talkTime: time,
-    })
-    console.log("评论",this.data.inputValue)
-   if(that.data.inputValue != ''||that.data.inputValue!=null)
-   {  
-    that.setData({
-     talks: temp,
-     inputValue: that.data.inputValue,
-    })
-    console.log("本次输入的值",this.data.inputValue)
-    this.setData({
-      once_talk:{
-      avatarUrl: getApp().globalData.userInfo.avatarUrl,
-      nickName: getApp().globalData.userInfo.nickName,
-      content: this.data.inputValue,
-      talkTime: time}
-    })
-    console.log("本次发表的评论",this.data.once_talk)
-    db.collection('dish').doc(this.data.id).update({
-      data: {
-        talks: _.push(this.data.once_talk)
-      },
-      success: function(res) {
-        console.log("传入数据成功",res)
-      }
-    })
-    this.setData({
-      inputValue:''
-    })
-   }
-   
-   
+    if(getApp().globalData.userInfo==''){
+      wx.showToast({
+        image	:'../../../images/index/outline.png',
+        title: '请先登录',
+      })
+    }else{
+        const that = this;
+        var time = util.formatTime(new Date());
+        let temp=that.data.talks;  
+        temp.unshift({
+        avatarUrl: getApp().globalData.userInfo.avatarUrl,
+        nickName: getApp().globalData.userInfo.nickName,
+        content: this.data.inputValue,
+        talkTime: time,
+        })
+        console.log("评论",this.data.inputValue)
+        if(that.data.inputValue != ''||that.data.inputValue!=null)
+        {  
+          that.setData({
+            talks: temp,
+            inputValue: that.data.inputValue,
+          })
+          console.log("本次输入的值",this.data.inputValue)
+          this.setData({
+            once_talk:{
+              avatarUrl: getApp().globalData.userInfo.avatarUrl,
+              nickName: getApp().globalData.userInfo.nickName,
+              content: this.data.inputValue,
+              talkTime: time}
+          })
+          console.log("本次发表的评论",this.data.once_talk)
+          db.collection('dish').doc(this.data.id).update({
+            data: {
+              talks: _.push(this.data.once_talk)
+            },
+            success: function(res) {
+              console.log("传入评论数据成功",res)
+            }
+          })
+          this.setData({
+            inputValue:''
+          })
+        }
+    }
    
    },
 
