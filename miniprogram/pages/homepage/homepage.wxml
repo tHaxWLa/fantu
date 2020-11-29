@@ -36,17 +36,19 @@
 
   <view class="category-panel2">
     <view bindtap='nodev' class="category-item">
-      <image class="category-item-image" src="../../images/homepage/fan3.png" mode="aspectFit"/>
+      <image class="category-item-image" src="../../images/homepage/fan4.png" mode="aspectFit"/>
       <text class="category-item-text">紫荆园二楼</text>
     </view>
-    <view bindtap='nodev' class="category-item">
-      <image class="category-item-image" src="../../images/homepage/fan4.png" mode="aspectFit"/>
-      <text class="category-item-text">京元</text>
+    <view bindtap='uploadphoto' class="category-item1">
+      <image class="category-item-image" src="../../images/homepage/photo.png" mode="aspectFit"/>
+      <text class="category-item-text">拍照上传</text>
     </view>
     <view bindtap='nodev' class="category-item">
       <image class="category-item-image" src="../../images/homepage/fan5.png" mode="aspectFit"/>
       <text class="category-item-text">其他餐厅</text>
     </view>
-  </view>
+  </view> 
 </view>
+
 </view>
+

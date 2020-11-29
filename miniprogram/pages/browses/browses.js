@@ -14,6 +14,7 @@ Page({
    up_stroke:false,// ture:上划；false：下划
    difference:'', // 拖动的距离
    windowHeight:'',// 屏幕高度
+   windowHeight2:'',
   },
   onReady: function() {
     // 评论弹出层动画创建
@@ -22,6 +23,12 @@ Page({
      timingFunction: "ease", // 动画的类型
      delay: 0 // 动画延迟参数
     })
+
+    this.setData({
+      windowHeight2:wx.getSystemInfoSync().screenHeight
+    })
+    var high=this.data.windowHeight2
+    console.log("屏幕高度3:"+high)
     },
 
     showTalks: function(e) {
@@ -243,9 +250,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-        windowHeight:wx.getSystemInfoSync().windowHeight
-      })
+   
    db.collection('dish').aggregate().sample({
      size: 20
    }).end().then(res => {
@@ -264,7 +269,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.setData({
+      windowHeight:wx.getSystemInfoSync().windowHeight
+    })
   },
 
   /**
@@ -379,9 +386,10 @@ Page({
         }
 
         db.collection('dish').aggregate().sample({
-          size: 1
+          size: 2
         }).end().then(res => {
          lists.push(res.list[0])
+         lists.push(res.list[1])
          console.log("现在菜单",lists)
          this.setData({
            video_list:lists

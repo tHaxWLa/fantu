@@ -55,6 +55,14 @@
   text-align: center;
   flex-direction: column;
 }
+.category-item1 {
+  display: flex;
+  width: 25vw;
+  text-align: center;
+  flex-direction: column;
+  
+  
+}
 
 .category-item-image {
   width: 20vw;
@@ -87,4 +95,13 @@ page{
   height: 100%;
   font-size: x-large;
   font-family: cursive; 
+}
+.up{
+  bottom: 10rpx;         
+  background-color: rgb(255, 194, 194);
+    position: relative;
+}
+.btnview{
+  width: 100%;
+ padding-left: 25vw;
 }

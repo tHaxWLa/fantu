@@ -1,0 +1,4 @@
+<!--miniprogram/pages/upimg/upimg.wxml-->
+<view class="btnview">
+  <button bindtap='uploadPhoto' class="up">拍照上传</button>
+</view>

@@ -17,6 +17,10 @@ Page({
     avatarUrl:'',
     windowHeight:'',
     windowHeight2:'',
+
+
+
+
     banner: [
       {
         picUrl:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1532844980,1238263623&fm=26&gp=0.jpg'
@@ -41,10 +45,18 @@ Page({
       duration:1000
      })
   },
+  nodev1:function()
+  {
+    wx.showToast({
+      title: '功能未开放,敬请期待!',
+      icon:'none',
+      duration:1000
+     })
+  },
   onLoad: function (options) {
 
     this.setData({
-      windowHeight2:wx.getSystemInfoSync().windowHeight
+      windowHeight2:wx.getSystemInfoSync().screenHeight
     })
     var high=this.data.windowHeight2
     console.log("屏幕高度2:"+high)
@@ -184,6 +196,18 @@ Page({
       url: '../canteen/canteen'
     })
   },
+
+
+uploadphoto:function () {
+  wx.navigateTo({
+    url: '../../pages/upimg/upimg',
+  })
+  
+}
+
+
+
+
 
 
 })
